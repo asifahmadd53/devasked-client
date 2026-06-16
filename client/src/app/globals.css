@@ -31,6 +31,7 @@
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
@@ -62,6 +63,7 @@
   --muted: #F1F5F9;
   --muted-foreground: #6B7280;
   --accent: #68B2F1;
+  --subtle: #EDF6FF;
   --accent-foreground: #14213D;
   --destructive: #ef4444;
   --border: #E2E8F0;
@@ -97,6 +99,7 @@
   --muted: #1E293B;
   --muted-foreground: #94A3B8;
   --accent: #1E293B;
+  --subtle: #1a2332;
   --accent-foreground: #F8FAFC;
   --destructive: #f87171;
   --border: #334155;
@@ -123,9 +126,9 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-geist-mono), ui-sans-serif, system-ui, sans-serif;
   }
   html {
-    font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-geist-mono), ui-sans-serif, system-ui, sans-serif;
   }
 }
