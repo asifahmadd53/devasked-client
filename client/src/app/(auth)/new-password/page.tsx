@@ -5,21 +5,19 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Eye, EyeOff, Mail } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 import Image from "next/image";
-import { signUpPage } from "@/assets/images";
 import Link from "next/link";
+import { google } from "@/assets/icons";
 
 
-export default function LoginPage() {
+export default function NewPasswordPage() {
     const [showPassword, setShowPassword] = useState(false);
-    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [isTyping, setIsTyping] = useState(false);
 
 
@@ -28,10 +26,10 @@ export default function LoginPage() {
         setError("");
         setIsLoading(true);
 
-
+        
         await new Promise(resolve => setTimeout(resolve, 300));
 
-        if (email === "erik@gmail.com" && password === "1234") {
+        if (email === "erik@gmail.com") {
             console.log("✅ Login successful!");
             alert("Login successful! Welcome, Erik!");
             // In a real app, you would:
@@ -47,40 +45,10 @@ export default function LoginPage() {
     };
 
     return (
-        <div className="min-h-screen grid lg:grid-cols-2">
-            {/* Left Content Section */}
-            <div className="relative hidden lg:flex flex-col justify-between bg-subtle p-12 text-primary-foreground min-h-screen">
-                {/* Top: Logo */}
-                <div className="relative z-20 shrink-0">
-                    <Image width={150} height={150} alt="logo" src="/logo.svg" className="object-cover" />
-                </div>
-
-                <div className="relative z-20 flex-1 flex items-center justify-center">
-                    <Image width={450} height={450} alt="sign in" src={signUpPage} className="object-cover" />
-                </div>
-
-                {/* Bottom: Links */}
-                <div className="relative z-20 flex items-center gap-8 text-sm shrink-0 text-primary">
-                    <a href="#" className="text-primary hover:underline">
-                        Privacy Policy
-                    </a>
-                    <a href="#" className="text-primary hover:underline">
-                        Terms of Service
-                    </a>
-                    <a href="#" className="text-primary hover:underline">
-                        Contact
-                    </a>
-                </div>
-
-                {/* Background effects */}
-                <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:20px_20px]" />
-                <div className="absolute top-1/4 right-1/4 size-64 bg-primary-foreground/10 rounded-full blur-3xl" />
-                <div className="absolute bottom-1/4 left-1/4 size-96 bg-primary-foreground/5 rounded-full blur-3xl" />
-            </div>
-
-            {/* Right Login Section */}
-            <div className="flex items-center justify-center p-8 bg-background">
-                <div className="w-full max-w-[420px]">
+        <div className="min-h-screen w-full ">
+          
+            <div className="flex items-center bg-subtle min-h-screen justify-center p-8">
+                <div className="w-full max-w-[420px] border p-4 py-6 bg-white rounded-md">
                     {/* Mobile Logo */}
                     <div className="lg:hidden flex items-center justify-center gap-2 text-lg font-semibold mb-12">
                         <div className="size-8 flex items-center justify-center">
@@ -88,48 +56,17 @@ export default function LoginPage() {
                                 <Image width={100} height={100} alt="logo" src="/logo.svg" className="object-cover" />
                             </div>
                         </div>
-
+                        
                     </div>
 
                     {/* Header */}
                     <div className="text-center mb-10">
-                        <h1 className="text-3xl font-bold tracking-tight mb-2">Create Your Account</h1>
-                        <p className="text-muted-foreground text-sm">Please enter your details</p>
+                        <h1 className="text-3xl font-bold tracking-tight mb-2">Reset Password</h1>
+                        <p className="text-muted-foreground text-xs">Enter email address and we will send you a link to reset password</p>
                     </div>
 
                     {/* Login Form */}
                     <form onSubmit={handleSubmit} className="space-y-5">
-                        <div className="space-y-2">
-                            <Label htmlFor="name" className="text-sm font-medium">Name</Label>
-                            <Input
-                                id="name"
-                                type="text"
-                                placeholder="Muhammad Asif"
-                                value={name}
-                                autoComplete="off"
-                                onChange={(e) => setName(e.target.value)}
-                                onFocus={() => setIsTyping(true)}
-                                onBlur={() => setIsTyping(false)}
-                                required
-                                className="max-h-11 min-h-11"
-                            />
-                        </div>
-
-                        <div className="space-y-2">
-                            <Label htmlFor="email" className="text-sm font-medium">Email</Label>
-                            <Input
-                                id="email"
-                                type="email"
-                                placeholder="anna@gmail.com"
-                                value={email}
-                                autoComplete="off"
-                                onChange={(e) => setEmail(e.target.value)}
-                                onFocus={() => setIsTyping(true)}
-                                onBlur={() => setIsTyping(false)}
-                                required
-                                className="max-h-11 min-h-11"
-                            />
-                        </div>
 
                         <div className="space-y-2">
                             <Label htmlFor="password" className="text-sm font-medium">Password</Label>
@@ -183,24 +120,6 @@ export default function LoginPage() {
                             </div>
                         </div>
 
-                        <div className="flex items-center justify-between">
-                            <div className="flex items-center space-x-2">
-                                <Checkbox id="remember" />
-                                <Label
-                                    htmlFor="remember"
-                                    className="text-sm font-normal cursor-pointer"
-                                >
-                                    Remember for 30 days
-                                </Label>
-                            </div>
-                            <a
-                                href="#"
-                                className="text-sm text-primary hover:underline font-medium"
-                            >
-                                Forgot password?
-                            </a>
-                        </div>
-
                         {error && (
                             <div className="p-3 text-sm text-red-400 bg-red-950/20 border border-red-900/30 rounded-lg">
                                 {error}
@@ -217,23 +136,12 @@ export default function LoginPage() {
                         </Button>
                     </form>
 
-                    {/* Social Login */}
-                    <div className="mt-6">
-                        <Button
-                            variant="outline"
-                            className="w-full min-h-11 bg-subtle border-border/60"
-                            type="button"
-                        >
-                            <Mail className="mr-2 size-5" />
-                            Log in with Google
-                        </Button>
-                    </div>
-
+                 
                     {/* Sign Up Link */}
                     <div className="text-center text-sm text-muted-foreground mt-8">
-                        Already have an account? {" "}
-                        <Link href="/sign-in" className="text-foreground font-medium hover:underline">
-                            Sign In
+                        {" "}
+                        <Link href="/sign-in" className="text-secondary font-medium hover:underline">
+                            Back to Sign In
                         </Link>
                     </div>
                 </div>

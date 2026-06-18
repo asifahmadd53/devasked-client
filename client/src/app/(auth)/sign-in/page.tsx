@@ -5,10 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Eye, EyeOff, Mail } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 import Image from "next/image";
 import { signInPage } from "@/assets/images";
 import Link from "next/link";
+import { google } from "@/assets/icons";
 
 
 export default function LoginPage() {
@@ -180,7 +181,9 @@ export default function LoginPage() {
                             className="w-full min-h-11 bg-subtle border-border/60"
                             type="button"
                         >
-                            <Mail className="mr-2 size-5" />
+                            <div className="flex justify-start items-start mr-4">
+                            <Image width={20} height={20} alt="google" src={google} className="object-contain" />
+                            </div>
                             Log in with Google
                         </Button>
                     </div>
