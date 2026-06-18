@@ -9,6 +9,7 @@ import { Eye, EyeOff, Mail } from "lucide-react";
 import Image from "next/image";
 import { signUpPage } from "@/assets/images";
 import Link from "next/link";
+import { google } from "@/assets/icons";
 
 
 export default function LoginPage() {
@@ -111,7 +112,6 @@ export default function LoginPage() {
                                 onFocus={() => setIsTyping(true)}
                                 onBlur={() => setIsTyping(false)}
                                 required
-                                className="max-h-11 min-h-11"
                             />
                         </div>
 
@@ -127,7 +127,7 @@ export default function LoginPage() {
                                 onFocus={() => setIsTyping(true)}
                                 onBlur={() => setIsTyping(false)}
                                 required
-                                className="max-h-11 min-h-11"
+
                             />
                         </div>
 
@@ -141,7 +141,7 @@ export default function LoginPage() {
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
-                                    className="max-h-11 min-h-11 pr-10 "
+                                    className="pr-10 "
                                 />
                                 <button
                                     type="button"
@@ -167,7 +167,7 @@ export default function LoginPage() {
                                     value={confirmPassword}
                                     onChange={(e) => setConfirmPassword(e.target.value)}
                                     required
-                                    className="max-h-11 min-h-11 pr-10 "
+                                    className="pr-10 "
                                 />
                                 <button
                                     type="button"
@@ -193,12 +193,7 @@ export default function LoginPage() {
                                     Remember for 30 days
                                 </Label>
                             </div>
-                            <a
-                                href="#"
-                                className="text-sm text-primary hover:underline font-medium"
-                            >
-                                Forgot password?
-                            </a>
+
                         </div>
 
                         {error && (
@@ -209,7 +204,7 @@ export default function LoginPage() {
 
                         <Button
                             type="submit"
-                            className="w-full min-h-11 text-base font-medium"
+                            className="w-full h-10 text-base font-medium"
                             size="lg"
                             disabled={isLoading}
                         >
@@ -221,10 +216,12 @@ export default function LoginPage() {
                     <div className="mt-6">
                         <Button
                             variant="outline"
-                            className="w-full min-h-11 bg-subtle border-border/60"
+                            className="w-full h-10 bg-subtle border-border/60"
                             type="button"
                         >
-                            <Mail className="mr-2 size-5" />
+                            <div className="flex justify-start items-start mr-2">
+                                <Image width={20} height={20} alt="google" src={google} className="object-contain" />
+                            </div>
                             Log in with Google
                         </Button>
                     </div>

@@ -20,6 +20,7 @@
   --color-sidebar: var(--sidebar);
   --color-chart-5: var(--chart-5);
   --color-chart-4: var(--chart-4);
+  --color-subtle: var(--subtle);
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
@@ -61,6 +62,7 @@
   --secondary: #68B2F1;
   --secondary-foreground: #14213D;
   --muted: #F1F5F9;
+  --subtle: #EDF6FF;
   --muted-foreground: #6B7280;
   --accent: #68B2F1;
   --subtle: #EDF6FF;
@@ -105,6 +107,7 @@
   --border: #334155;
   --input: #334155;
   --ring: #68B2F1;
+  --subtle: #1a2332;
   --chart-1: #68B2F1;
   --chart-2: #94A3B8;
   --chart-3: #CBD5E1;
@@ -126,9 +129,9 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-geist-mono), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
   }
   html {
-    font-family: var(--font-geist-mono), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
   }
 }

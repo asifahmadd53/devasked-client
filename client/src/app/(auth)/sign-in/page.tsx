@@ -110,7 +110,7 @@ export default function LoginPage() {
                                 onFocus={() => setIsTyping(true)}
                                 onBlur={() => setIsTyping(false)}
                                 required
-                                className="max-h-11 min-h-11"
+                                className=""
                             />
                         </div>
 
@@ -124,7 +124,7 @@ export default function LoginPage() {
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
-                                    className="max-h-11 min-h-11 pr-10 "
+                                    className="pr-10 "
                                 />
                                 <button
                                     type="button"
@@ -132,9 +132,9 @@ export default function LoginPage() {
                                     className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
                                 >
                                     {showPassword ? (
-                                        <EyeOff className="size-5" />
+                                        <EyeOff className="size-4" />
                                     ) : (
-                                        <Eye className="size-5" />
+                                        <Eye className="size-4" />
                                     )}
                                 </button>
                             </div>
@@ -151,7 +151,7 @@ export default function LoginPage() {
                                 </Label>
                             </div>
                             <a
-                                href="#"
+                                href="/forgot-password"
                                 className="text-sm text-primary hover:underline font-medium"
                             >
                                 Forgot password?
@@ -166,7 +166,7 @@ export default function LoginPage() {
 
                         <Button
                             type="submit"
-                            className="w-full min-h-11 text-base font-medium"
+                            className="w-full h-10 text-base font-medium"
                             size="lg"
                             disabled={isLoading}
                         >
@@ -178,10 +178,10 @@ export default function LoginPage() {
                     <div className="mt-6">
                         <Button
                             variant="outline"
-                            className="w-full min-h-11 bg-subtle border-border/60"
+                            className="w-full h-10 bg-subtle border-border/60"
                             type="button"
                         >
-                            <div className="flex justify-start items-start mr-4">
+                            <div className="flex justify-start items-start mr-2">
                             <Image width={20} height={20} alt="google" src={google} className="object-contain" />
                             </div>
                             Log in with Google

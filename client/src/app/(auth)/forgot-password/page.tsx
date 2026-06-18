@@ -4,12 +4,9 @@ import { useState, } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Eye, EyeOff } from "lucide-react";
+
 import Image from "next/image";
-import { signInPage } from "@/assets/images";
 import Link from "next/link";
-import { google } from "@/assets/icons";
 
 
 export default function ForgotPasswordPage() {
@@ -44,70 +41,93 @@ export default function ForgotPasswordPage() {
     };
 
     return (
-        <div className="min-h-screen w-full ">
-          
-            <div className="flex items-center bg-subtle min-h-screen justify-center p-8">
-                <div className="w-full max-w-[420px] border p-4 py-6 bg-white rounded-md">
-                    {/* Mobile Logo */}
-                    <div className="lg:hidden flex items-center justify-center gap-2 text-lg font-semibold mb-12">
-                        <div className="size-8 flex items-center justify-center">
-                            <div className="relative z-20 shrink-0">
-                                <Image width={100} height={100} alt="logo" src="/logo.svg" className="object-cover" />
+        <div className="min-h-screen w-full">
+
+            <div className="relative hidden lg:flex flex-col justify-between bg-subtle p-12  min-h-screen">
+                {/* Top: Logo */}
+                <div className="relative z-20 shrink-0">
+                    <Image width={150} height={150} alt="logo" src="/logo.svg" className="object-cover" />
+                </div>
+
+
+                <div className="flex items-center bg-subtle justify-center p-8">
+                    <div className="w-full max-w-[420px] border p-4 py-8 bg-white rounded-md">
+                        {/* Mobile Logo */}
+                        <div className="lg:hidden flex items-center justify-center gap-2 text-lg font-semibold mb-12">
+                            <div className="size-8 flex items-center justify-center">
+                                <div className="relative z-20 shrink-0">
+                                    <Image width={100} height={100} alt="logo" src="/logo.svg" className="object-cover" />
+                                </div>
                             </div>
-                        </div>
-                        
-                    </div>
 
-                    {/* Header */}
-                    <div className="text-center mb-10">
-                        <h1 className="text-3xl font-bold tracking-tight mb-2">Welcome back!</h1>
-                        <p className="text-muted-foreground text-sm">Please enter your details</p>
-                    </div>
-
-                    {/* Login Form */}
-                    <form onSubmit={handleSubmit} className="space-y-5">
-                        <div className="space-y-2">
-                            <Label htmlFor="email" className="text-sm font-medium">Email</Label>
-                            <Input
-                                id="email"
-                                type="email"
-                                placeholder="anna@gmail.com"
-                                value={email}
-                                autoComplete="off"
-                                onChange={(e) => setEmail(e.target.value)}
-                                onFocus={() => setIsTyping(true)}
-                                onBlur={() => setIsTyping(false)}
-                                required
-                                className="max-h-11 min-h-11"
-                            />
                         </div>
 
-                        {error && (
-                            <div className="p-3 text-sm text-red-400 bg-red-950/20 border border-red-900/30 rounded-lg">
-                                {error}
+                        {/* Header */}
+                        <div className="text-center mb-10">
+                            <h1 className="text-3xl font-bold tracking-tighter mb-2">Forgot Password?</h1>
+                            <p className="text-muted-foreground text-xs">Enter email address and we will send you a link to reset password</p>
+                        </div>
+
+                        {/* Login Form */}
+                        <form onSubmit={handleSubmit} className="space-y-5">
+                            <div className="space-y-2">
+                                <Label htmlFor="email" className="text-sm font-medium">Email</Label>
+                                <Input
+                                    id="email"
+                                    type="email"
+                                    placeholder="anna@gmail.com"
+                                    value={email}
+                                    autoComplete="off"
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    onFocus={() => setIsTyping(true)}
+                                    onBlur={() => setIsTyping(false)}
+                                    required
+                                    
+                                />
                             </div>
-                        )}
 
-                        <Button
-                            type="submit"
-                            className="w-full min-h-11 text-base font-medium"
-                            size="lg"
-                            disabled={isLoading}
-                        >
-                            {isLoading ? "Signing in..." : "Log in"}
-                        </Button>
-                    </form>
+                            {error && (
+                                <div className="p-3 text-sm text-red-400 bg-red-950/20 border border-red-900/30 rounded-lg">
+                                    {error}
+                                </div>
+                            )}
 
-                 
-                    {/* Sign Up Link */}
-                    <div className="text-center text-sm text-muted-foreground mt-8">
-                        Don&apos;t have an account?{" "}
-                        <Link href="/sign-up" className="text-foreground font-medium hover:underline">
-                            Sign Up
-                        </Link>
+                            <Button
+                                type="submit"
+                                className="w-full h-10 text-base font-medium"
+                                size="lg"
+                                disabled={isLoading}
+                            >
+                                {isLoading ? "Proceeding..." : "Proceed"}
+                            </Button>
+                        </form>
+
+
+                        {/* Sign Up Link */}
+                        <div className="text-center text-sm mt-8">
+                            <Link href="/sign-in" className="text-secondary tracking-tighter font-medium hover:underline">
+                                Back to Sign In
+                            </Link>
+                        </div>
                     </div>
                 </div>
+
+
+                <div className="relative z-20 flex items-center gap-8 text-sm shrink-0 text-primary">
+                    <a href="#" className="text-primary hover:underline">
+                        Privacy Policy
+                    </a>
+                    <a href="#" className="text-primary hover:underline">
+                        Terms of Service
+                    </a>
+                    <a href="#" className="text-primary hover:underline">
+                        Contact
+                    </a>
+                </div>
+
             </div>
+
+
         </div>
     );
 }

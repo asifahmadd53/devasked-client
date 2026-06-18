@@ -78,7 +78,7 @@ export default function NewPasswordPage() {
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
-                                    className="max-h-11 min-h-11 pr-10 "
+                                    className="pr-10 "
                                 />
                                 <button
                                     type="button"
@@ -104,7 +104,7 @@ export default function NewPasswordPage() {
                                     value={confirmPassword}
                                     onChange={(e) => setConfirmPassword(e.target.value)}
                                     required
-                                    className="max-h-11 min-h-11 pr-10 "
+                                    className="pr-10 "
                                 />
                                 <button
                                     type="button"
@@ -128,7 +128,7 @@ export default function NewPasswordPage() {
 
                         <Button
                             type="submit"
-                            className="w-full min-h-11 text-base font-medium"
+                            className="w-full h-10 text-base font-medium"
                             size="lg"
                             disabled={isLoading}
                         >
