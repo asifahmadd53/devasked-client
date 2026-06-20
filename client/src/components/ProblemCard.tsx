@@ -21,10 +21,10 @@ export function ProblemCard({
 }) {
     return (
         
-        <div className="relative bg-white p-8 md:p-10 rounded-4xl md:rounded-3xl flex flex-col h-80 w-[calc(100vw-48px)] md:w-95 transition-all duration-500 group">
+        <div className="relative bg-white w-full p-4 md:p-6 rounded-4xl md:rounded-3xl flex flex-col transition-all duration-500 group">
             <div
                 style={{ transform: "translateZ(50px)" }}
-                className="flex flex-col h-full"
+                className="flex flex-col h-full px-2"
             >
                 <div className="mb-6 md:mb-8 w-14 min-h-14 md:w-14 md:min-h-14 bg-gray-50 rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 ease-out shadow-sm group-hover:shadow-xl">
                     {problem.icon}

@@ -126,7 +126,7 @@ export default function HomePage() {
                 </section>
 
             <section>
-                    <div className="mx-auto w-full max-w-7xl space-y-12">
+                    <div className="mx-auto w-full max-w-6xl space-y-12">
                         <div className="mx-auto max-w-3xl text-center">
                             <h2 className="font-medium text-xl md:text-2xl lg:text-3xl">
                                 The Gap Between Theory and Reality
@@ -137,8 +137,8 @@ export default function HomePage() {
                             </p>
                         </div>
 
-                        <div className="">
-                            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
+                        <div className="w-full border">
+                            <div className="grid grid-cols-1 w-full gap-6 sm:grid-cols-2 md:grid-cols-3">
                                 {problems.map((feature) => (
                                     <ProblemCard problem={feature} key={feature.title} />
                                 ))}
@@ -159,7 +159,7 @@ export default function HomePage() {
                         </p>
                     </div>
                 </div>
-                    <div className="relative mx-auto grid w-full max-w-5xl grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-6">
+                    <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-6">
                         {features.map((feature) => (
                             <FeatureCard className={feature.className} key={feature.id}>
                                 {feature.children}
