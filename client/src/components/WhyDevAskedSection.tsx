@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Bookmark, ChevronDown } from "lucide-react";
 
-
 function PillBadge({ text }: { text: string }) {
     return (
         <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium mb-4"

@@ -20,8 +20,8 @@ export function ProblemCard({
     problem: ProblemType;
 }) {
     return (
-        
-        <div className="relative bg-white w-full p-4 md:p-6 rounded-4xl md:rounded-3xl flex flex-col transition-all duration-500 group">
+
+        <div className="relative bg-white w-full p-4 md:p-6 rounded-[2rem] md:rounded-3xl flex flex-col transition-all duration-500 group">
             <div
                 style={{ transform: "translateZ(50px)" }}
                 className="flex flex-col h-full px-2"
@@ -41,9 +41,8 @@ export function ProblemCard({
             </div>
 
             {/* Thick Shadow handling */}
-            <div className="absolute inset-0 rounded-4xl md:rounded-[2.5rem] bg-black/5 -z-10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-8 scale-95" />
-        </div>
-        
+            <div className="absolute inset-0 rounded-[2rem] md:rounded-[2.5rem] bg-black/5 -z-10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-8 scale-95" />        </div>
+
     );
 }
 

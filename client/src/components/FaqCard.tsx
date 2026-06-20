@@ -56,14 +56,14 @@ export function FAQSection() {
                         aria-hidden="true"
                     >
                         <HelpCircle
-                            className="h-8 w-8 text-[var(--muted-foreground)]"
+                            className="h-8 w-8 text-muted-foreground"
                             aria-hidden="true"
                         />
                     </motion.div>
                     <h2 className="mb-4 text-3xl font-bold sm:text-4xl md:text-5xl">
                         Frequently Asked Questions
                     </h2>
-                    <p className="text-sm text-[var(--foreground)]/70 sm:text-base md:text-lg">
+                    <p className="text-sm text-foreground/70 sm:text-base md:text-lg">
                         Everything you need to know about our library
                     </p>
                 </motion.div>
@@ -81,7 +81,7 @@ export function FAQSection() {
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
                             >
-                                <Card className="overflow-hidden  bg-[var(--card-bg)]">
+                                <Card className="overflow-hidden bg-card">
                                     <CardHeader>
                                         <motion.button
                                             type="button"
@@ -102,7 +102,7 @@ export function FAQSection() {
                                                 transition={{ duration: 0.3 }}
                                                 aria-hidden="true"
                                             >
-                                                <ChevronDown className="h-5 w-5 text-[var(--foreground)]/60" />
+                                                <ChevronDown className="h-5 w-5 text-foreground/60" />
                                             </motion.div>
                                         </motion.button>
                                     </CardHeader>
@@ -119,9 +119,7 @@ export function FAQSection() {
                                                 aria-labelledby={questionId}
                                             >
                                                 <CardContent className="pt-0">
-                                                    <p className="text-[var(--foreground)]/70">
-                                                        {faq.answer}
-                                                    </p>
+                                                    <p className="text-foreground/70">                                                    </p>
                                                 </CardContent>
                                             </motion.div>
                                         )}

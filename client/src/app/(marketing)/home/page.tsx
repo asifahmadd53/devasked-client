@@ -6,6 +6,7 @@ import { FeatureCard, features } from '@/components/FeatureCard';
 import { FAQSection } from '@/components/FaqCard';
 import { FeaturesSection } from '@/components/feature-section';
 import { CommunitySection } from '@/components/CommunitySection';
+import Image from 'next/image';
 
 
 export default function HomePage() {
@@ -21,46 +22,46 @@ export default function HomePage() {
                 </div>
                 <section>
                     <div className="relative pt-24 md:pt-36">
-                        
-                            <img
-                                src="https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120"
-                                alt="background"
-                                className="absolute inset-x-0 top-56 -z-20 hidden lg:top-32 dark:block"
-                                width="3276"
-                                height="4095"
-                            />
-                        <div aria-hidden className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]" />
+
+                        <Image
+                            src="https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120"
+                            alt="background"
+                            className="absolute inset-x-0 top-56 -z-20 hidden lg:top-32 dark:block"
+                            width={3276}
+                            height={4095}
+                            priority
+                        />                        <div aria-hidden className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]" />
                         <div className="mx-auto max-w-7xl px-6">
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-                               
-                                    <Link
-                                        href="#link"
-                                        className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-black/5 transition-all duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
-                                        <span className="text-foreground text-sm">Browse Communities</span>
-                                        <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
 
-                                        <div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
-                                            <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
-                                                <span className="flex size-6">
-                                                    <ArrowRight className="m-auto size-3" />
-                                                </span>
-                                                <span className="flex size-6">
-                                                    <ArrowRight className="m-auto size-3" />
-                                                </span>
-                                            </div>
+                                <Link
+                                    href="#link"
+                                    className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-black/5 transition-all duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
+                                    <span className="text-foreground text-sm">Browse Communities</span>
+                                    <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
+
+                                    <div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
+                                        <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
+                                            <span className="flex size-6">
+                                                <ArrowRight className="m-auto size-3" />
+                                            </span>
+                                            <span className="flex size-6">
+                                                <ArrowRight className="m-auto size-3" />
+                                            </span>
                                         </div>
-                                    </Link>
+                                    </div>
+                                </Link>
 
-                                    <h1
-                                        className="mt-6 max-w-7xl text-balance text-3xl md:text-7xl lg:mt-16 xl:text-[4.25rem]">
+                                <h1
+                                    className="mt-6 max-w-7xl text-balance text-3xl md:text-7xl lg:mt-16 xl:text-[4.25rem]">
                                     Real Interview Questions From Real Candidates
-                                    </h1>
-                                    <p
-                                        className="mx-auto mt-6 max-w-5xl text-center text-base sm:text-sm lg:text-lg">
+                                </h1>
+                                <p
+                                    className="mx-auto mt-6 max-w-5xl text-center text-base sm:text-sm lg:text-lg">
                                     Stop guessing what gets asked. Browse real interview questions shared by developers, filter by tech stack and difficulty, and walk into your next interview fully prepared.
-                                    </p>
+                                </p>
 
-                                 
+
                                 <div className="mt-2 flex flex-col lg:flex-row items-center justify-center gap-3">
                                     <Button
                                         asChild
@@ -85,29 +86,29 @@ export default function HomePage() {
                             </div>
                         </div>
 
-                      
-                            <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
-                                <div
-                                    aria-hidden
-                                    className="bg-gradient-to-b to-subtle absolute inset-0 z-10 from-transparent from-35%"
+
+                        <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
+                            <div
+                                aria-hidden
+                                className="bg-gradient-to-b to-subtle absolute inset-0 z-10 from-transparent from-35%"
+                            />
+                            <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                                <Image
+                                    className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
+                                    src="https://tailark.com//_next/image?url=%2Fmail2.png&w=3840&q=75"
+                                    alt="app screen"
+                                    width="2700"
+                                    height="1440"
                                 />
-                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
-                                    <img
-                                        className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
-                                        src="https://tailark.com//_next/image?url=%2Fmail2.png&w=3840&q=75"
-                                        alt="app screen"
-                                        width="2700"
-                                        height="1440"
-                                    />
-                                    <img
-                                        className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
-                                        src="https://tailark.com/_next/image?url=%2Fmail2-light.png&w=3840&q=75"
-                                        alt="app screen"
-                                        width="2700"
-                                        height="1440"
-                                    />
-                                </div>
+                                <Image
+                                    className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
+                                    src="https://tailark.com/_next/image?url=%2Fmail2-light.png&w=3840&q=75"
+                                    alt="app screen"
+                                    width="2700"
+                                    height="1440"
+                                />
                             </div>
+                        </div>
                     </div>
                 </section>
                 <section className="pb-16 md:pb-32">
@@ -121,11 +122,11 @@ export default function HomePage() {
                                 <ChevronRight className="ml-1 inline-block size-3" />
                             </Link>
                         </div>
-                      
+
                     </div>
                 </section>
 
-            <section>
+                <section>
                     <div className="mx-auto w-full max-w-6xl space-y-12">
                         <div className="mx-auto max-w-3xl text-center">
                             <h2 className="font-medium text-xl md:text-2xl lg:text-3xl">
@@ -145,20 +146,20 @@ export default function HomePage() {
                             </div>
                         </div>
                     </div>
-            </section>
+                </section>
 
-            <section className='mt-32'>
+                <section className='mt-32'>
                     <div className='mx-auto w-full max-w-7xl space-y-12'>
-                    <div className="mx-auto max-w-3xl text-center my-4">
-                        <h2 className="font-medium text-xl md:text-2xl lg:text-3xl">
-                            Prepare With Real Interview Experiences
-                        </h2>
-                        <p className="mt-4 text-center text-muted-foreground text-sm md:text-base">
-                            Traditional preparation methods focus on generic algorithms. We focus on the actual
-                            challenges engineers face in real interviews today.
-                        </p>
+                        <div className="mx-auto max-w-3xl text-center my-4">
+                            <h2 className="font-medium text-xl md:text-2xl lg:text-3xl">
+                                Prepare With Real Interview Experiences
+                            </h2>
+                            <p className="mt-4 text-center text-muted-foreground text-sm md:text-base">
+                                Traditional preparation methods focus on generic algorithms. We focus on the actual
+                                challenges engineers face in real interviews today.
+                            </p>
+                        </div>
                     </div>
-                </div>
                     <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-6">
                         {features.map((feature) => (
                             <FeatureCard className={feature.className} key={feature.id}>
@@ -166,19 +167,19 @@ export default function HomePage() {
                             </FeatureCard>
                         ))}
                     </div>
-            </section>
+                </section>
 
-            <section>
+                <section>
                     <CommunitySection />
                     <FeaturesSection />
-            </section>
+                </section>
 
 
-                <FAQSection/>
+                <FAQSection />
 
             </main>
 
-       
+
         </>
     )
 }

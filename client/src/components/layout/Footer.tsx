@@ -3,13 +3,11 @@
 import FaceBook from "@/assets/icons/Facebook";
 import Github from "@/assets/icons/Github";
 import Instagram from "@/assets/icons/Instagram";
-import LinkedIn from "@/assets/icons/LinkedIn";
 import X from "@/assets/icons/XIcon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { motion, useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "framer-motion";
 import {
     ArrowUp,
     Mail,
@@ -154,7 +152,7 @@ export function FooterBlock() {
                                         
                                         className="text-sm text-muted-foreground transition-colors hover:text-foreground">
                                                 
-                                            <a href="">
+                                            <a href="#">
                                         {link}
                                             </a>
                                        
