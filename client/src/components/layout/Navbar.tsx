@@ -11,7 +11,7 @@ const menuItems = [
     { name: 'Features', href: '#link' },
     { name: 'Solution', href: '#link' },
     { name: 'Pricing', href: '#link' },
-    { name: 'About', href: '#link' },
+    { name: 'Contact', href: '/contact' },
 ]
 
 export const HeroHeader = () => {
@@ -33,9 +33,9 @@ export const HeroHeader = () => {
                 <div className={cn('mx-auto mt-2 max-w-7xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/50 max-w-6xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full justify-between lg:w-auto">
-                            <div className="relative z-20 shrink-0">
+                            <Link href="/" className="relative z-20 shrink-0">
                                 <Image width={150} height={150} alt="logo" src="/logo.svg" className="object-cover" />
-                            </div>
+                            </Link>
 
                             <button
                                 onClick={() => setMenuState(!menuState)}
