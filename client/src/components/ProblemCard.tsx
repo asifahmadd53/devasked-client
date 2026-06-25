@@ -4,8 +4,6 @@ import {
     Zap,
 } from "lucide-react";
 
-
-
 type ProblemType = {
     title: string;
     icon: React.ReactNode;

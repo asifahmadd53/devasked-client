@@ -45,22 +45,22 @@ export function getMenuList(pathname: string): Group[] {
       menus: [
         {
           href: "",
-          label: "Posts",
+          label: "Communities",
           icon: SquarePen,
           submenus: [
             {
-              href: "/posts",
+              href: "/communities",
               label: "All Posts",
             },
             {
-              href: "/posts/new",
+              href: "/my-communities",
               label: "New Post",
             },
           ],
         },
         {
-          href: "/categories",
-          label: "Categories",
+          href: "/questions",
+          label: "Questions",
           icon: Bookmark,
         },
         {
@@ -68,19 +68,34 @@ export function getMenuList(pathname: string): Group[] {
           label: "Tags",
           icon: Tag,
         },
+        {
+          href: "/quizes",
+          label: "Quizes",
+          icon: Bookmark,
+        },
+        {
+          href: "/trendins",
+          label: "Trending",
+          icon: Tag,
+        },
       ],
     },
     {
-      groupLabel: "Settings",
+      groupLabel: "Personal",
       menus: [
         {
-          href: "/users",
-          label: "Users",
+          href: "/bookmarks",
+          label: "Bookmarks",
           icon: Users,
         },
         {
-          href: "/account",
-          label: "Account",
+          href: "/profile",
+          label: "Profile",
+          icon: Settings,
+        },
+        {
+          href: "/settings",
+          label: "Settings",
           icon: Settings,
         },
       ],
