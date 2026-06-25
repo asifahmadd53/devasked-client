@@ -1,7 +1,11 @@
+import { ContentLayout } from "@/components/layout/Content";
+
 export default function Dashboard(){
     return(
-        <div>
-            helo
-        </div>
+        <ContentLayout title="Dashboard">
+            <div>
+                Dashbaord
+            </div>
+        </ContentLayout>
     )
 }

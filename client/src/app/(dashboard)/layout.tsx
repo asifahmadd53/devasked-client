@@ -1,6 +1,7 @@
 "use client";
 
 import { DashboardFooter } from "@/components/layout/DashboardFooter";
+import { DasboardNavbar } from "@/components/layout/DashboardNavbar";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { useSidebar } from "@/hooks/use-sidebar";
 import { useStore } from "@/hooks/use-store";
