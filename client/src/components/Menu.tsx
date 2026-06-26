@@ -53,7 +53,7 @@ export function Menu({ isOpen }: MenuProps) {
                             {menus.map(
                                 ({ href, label, icon: Icon, active, submenus }, index) =>
                                     !submenus || submenus.length === 0 ? (
-                                        <div className="w-full" key={index}>
+                                        <div className={isOpen ? "w-full":"w-[90%]"} key={index}>
                                             <TooltipProvider disableHoverableContent>
                                                 <Tooltip delayDuration={100}>
                                                     <TooltipTrigger asChild>
@@ -65,7 +65,7 @@ export function Menu({ isOpen }: MenuProps) {
                                                                     ? "default"
                                                                     : "ghost"
                                                             }
-                                                            className="w-full justify-start h-10 mb-1"
+                                                            className={cn("w-full h-10 mb-1", isOpen === false ? "justify-center" : "justify-start")}
                                                             asChild
                                                         >
                                                             <Link href={href}>
@@ -75,12 +75,7 @@ export function Menu({ isOpen }: MenuProps) {
                                                                     <Icon size={18} />
                                                                 </span>
                                                                 <p
-                                                                    className={cn(
-                                                                        "max-w-50 truncate",
-                                                                        isOpen === false
-                                                                            ? "-translate-x-96 opacity-0"
-                                                                            : "translate-x-0 opacity-100"
-                                                                    )}
+                                                                    className={cn("max-w-50 truncate", isOpen === false ? "-translate-x-96 opacity-0 hidden" : "translate-x-0 opacity-100")}
                                                                 >
                                                                     {label}
                                                                 </p>
@@ -122,7 +117,7 @@ export function Menu({ isOpen }: MenuProps) {
                                         variant="outline"
                                         className="w-full justify-center h-10 mt-5"
                                     >
-                                        <span className={cn(isOpen === false ? "" : "mr-4")}>
+                                        <span className={cn(isOpen === false ? "mr-0" : "mr-4")}>
                                             <LogOut size={18} />
                                         </span>
                                         <p

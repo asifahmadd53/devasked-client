@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useSidebar } from "@/hooks/use-sidebar";
 import { useStore } from "@/hooks/use-store";
 import { cn } from "@/lib/utils";
-import { PanelsTopLeft } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export function Sidebar() {
@@ -24,7 +24,7 @@ export function Sidebar() {
             <div
                 onMouseEnter={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}
-                className="relative h-full flex flex-col px-3 py-4 overflow-y-auto shadow-md dark:shadow-zinc-800"
+                className="relative h-full flex flex-col px-3 py-4 overflow-y-auto shadow-md dark:shadow-zinc-800 "
             >
                 <Button
                     className={cn(
@@ -34,19 +34,30 @@ export function Sidebar() {
                     variant="link"
                     asChild
                 >
-                    <Link href="/dashboard" className="flex items-center gap-2">
-                        <PanelsTopLeft className="w-6 h-6 mr-1" />
-                        <h1
-                            className={cn(
-                                "font-bold text-lg whitespace-nowrap transition-[transform,opacity,display] ease-in-out duration-300",
-                                !getOpenState()
-                                    ? "-translate-x-96 opacity-0 hidden"
-                                    : "translate-x-0 opacity-100"
-                            )}
-                        >
-                            Brand
-                        </h1>
-                    </Link>
+                    
+                   
+                        <Link href="/dashboard" className="w-full flex items-center border justify-center">
+                            <Image
+                                width={120}
+                                height={120}
+                                alt="logo"
+                                src="/logo.svg"
+                                className={cn(
+                                    "object-cover transition-all ease-in-out duration-300",
+                                    getOpenState() ? "opacity-100 w-[120px]" : "opacity-0 w-0"
+                                )}
+                            />
+                            <Image
+                                width={20}
+                                height={20}
+                                alt="logo-mark"
+                                src="/logo-mark.svg"
+                                className={cn(
+                                    "object-cover transition-all ease-in-out mr-3 duration-300",
+                                    getOpenState() ? "opacity-0 w-0" : "opacity-100 w-[20px]"
+                                )}
+                            />
+                        </Link>
                 </Button>
                 <Menu isOpen={getOpenState()} />
             </div>

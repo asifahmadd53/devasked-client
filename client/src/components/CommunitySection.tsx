@@ -93,9 +93,11 @@ export function CommunitySection() {
                 </div>
 
                 <div className="mt-10 flex justify-center">
-                    <Button render={<Link href="/communities" />} size="lg" className="px-6">
-                        <span>Join Community</span>
-                        <ArrowRight className="ml-1 size-4" />
+                    <Button asChild size="lg" className="px-6">
+                        <Link href="/communities">
+                            <span>Join Community</span>
+                            <ArrowRight className="ml-1 size-4" />
+                        </Link>
                     </Button>
                 </div>
             </div>
