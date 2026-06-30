@@ -43,24 +43,17 @@ export default function ForgotPasswordPage() {
     return (
         <div className="min-h-screen w-full">
 
-            <div className="relative hidden lg:flex flex-col justify-between bg-subtle p-12  min-h-screen">
+            <div className="relative lg:flex flex-col justify-between p-12  min-h-screen">
                 {/* Top: Logo */}
                 <div className="relative z-20 shrink-0">
                     <Image width={150} height={150} alt="logo" src="/logo.svg" className="object-cover" />
                 </div>
 
 
-                <div className="flex items-center bg-subtle justify-center p-8">
-                    <div className="w-full max-w-[420px] border p-4 py-8 bg-white rounded-md">
+                <div className="flex items-center justify-center p-8">
+                    <div className="w-full border p-4 py-8 rounded-md">
                         {/* Mobile Logo */}
-                        <div className="lg:hidden flex items-center justify-center gap-2 text-lg font-semibold mb-12">
-                            <div className="size-8 flex items-center justify-center">
-                                <div className="relative z-20 shrink-0">
-                                    <Image width={100} height={100} alt="logo" src="/logo.svg" className="object-cover" />
-                                </div>
-                            </div>
-
-                        </div>
+                      
 
                         {/* Header */}
                         <div className="text-center mb-10">
