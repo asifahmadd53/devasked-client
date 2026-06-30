@@ -9,8 +9,7 @@ import { Button } from "../ui/button"
 
 const menuItems = [
     { name: 'Features', href: '#link' },
-    { name: 'Solution', href: '#link' },
-    { name: 'Pricing', href: '#link' },
+    { name: 'Community', href: '#link' },
     { name: 'Contact', href: '/contact' },
 ]
 
@@ -95,7 +94,7 @@ export const HeroHeader = () => {
                                     asChild
                                     size="sm"
                                     className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <Link href="#">
+                                    <Link href="/sign-in">
                                         <span>Get Started</span>
                                     </Link>
                                 </Button>
