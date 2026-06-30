@@ -4,11 +4,9 @@ import { useState, } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Eye, EyeOff } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { google } from "@/assets/icons";
 
 
 export default function NewPasswordPage() {
@@ -18,7 +16,6 @@ export default function NewPasswordPage() {
     const [isLoading, setIsLoading] = useState(false);
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    const [isTyping, setIsTyping] = useState(false);
 
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -30,7 +27,7 @@ export default function NewPasswordPage() {
         await new Promise(resolve => setTimeout(resolve, 300));
 
         if (email === "erik@gmail.com") {
-            console.log("✅ Login successful!");
+            console.log("Login successful!");
             alert("Login successful! Welcome, Erik!");
             // In a real app, you would:
             // - Store auth token

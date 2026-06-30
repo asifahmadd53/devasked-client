@@ -3,7 +3,6 @@
 import FaceBook from "@/assets/icons/Facebook";
 import Github from "@/assets/icons/Github";
 import Instagram from "@/assets/icons/Instagram";
-import LinkedIn from "@/assets/icons/LinkedIn";
 import X from "@/assets/icons/XIcon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -245,7 +244,7 @@ export function FooterBlock() {
                                     <motion.div
                                         transition={{ duration: shouldReduceMotion ? 0.25 : 0.3 }}
                                     >
-                                        <social.icon className="h-4 w-4" aria-hidden />
+                                        <social.icon aria-hidden />
                                     </motion.div>
                                 </Button>
                             </motion.div>
