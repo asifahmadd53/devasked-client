@@ -1,7 +1,6 @@
 "use client";
 
 import { DashboardFooter } from "@/components/layout/DashboardFooter";
-import { DasboardNavbar } from "@/components/layout/DashboardNavbar";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { useSidebar } from "@/hooks/use-sidebar";
 import { useStore } from "@/hooks/use-store";
@@ -24,6 +23,7 @@ export default function AdminPanelLayout({
                     !settings.disabled && (!getOpenState() ? "lg:ml-[90px]" : "lg:ml-72")
                 )}
             >
+                
                 {children}
             </main>
             <footer

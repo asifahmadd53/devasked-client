@@ -1,3 +1,5 @@
+import { useMemo } from "react"
+
 type Segment = {
     label: string
     value: number
@@ -11,6 +13,16 @@ const segments: Segment[] = [
     { label: "Operating System", value: 10, color: "var(--chart-3)" },
     { label: "DevOps", value: 5, color: "var(--chart-4)" },
 ]
+
+const segmentsWithOffset = useMemo(() => {
+    let offset = 0
+    return segments.map((s) => {
+        const dash = (s.value / 100) * circumference
+        const result = { ...s, dash, offset }
+        offset += dash
+        return result
+    })
+}, [segments, circumference])
 
 export function ProgressDonut() {
     const radius = 60
@@ -26,24 +38,19 @@ export function ProgressDonut() {
                 role="img"
                 aria-label="Quiz score breakdown by topic"
             >
-                {segments.map((s) => {
-                    const dash = (s.value / 100) * circumference
-                    const segment = (
-                        <circle
-                            key={s.label}
-                            cx="80"
-                            cy="80"
-                            r={radius}
-                            fill="none"
-                            stroke={s.color}
-                            strokeWidth={stroke}
-                            strokeDasharray={`${dash} ${circumference - dash}`}
-                            strokeDashoffset={-offset}
-                        />
-                    )
-                    offset += dash
-                    return segment
-                })}
+                {segmentsWithOffset.map((s) => (
+                    <circle
+                        key={s.label}
+                        cx="80"
+                        cy="80"
+                        r={radius}
+                        fill="none"
+                        stroke={s.color}
+                        strokeWidth={stroke}
+                        strokeDasharray={`${s.dash} ${circumference - s.dash}`}
+                        strokeDashoffset={-s.offset}
+                    />
+                ))}
             </svg>
 
             <ul className="grid grid-cols-1 gap-2 text-sm">
