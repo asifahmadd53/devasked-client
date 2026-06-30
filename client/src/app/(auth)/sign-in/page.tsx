@@ -150,12 +150,12 @@ export default function LoginPage() {
                                     Remember for 30 days
                                 </Label>
                             </div>
-                            <a
+                            <Link
                                 href="/forgot-password"
                                 className="text-sm text-primary hover:underline font-medium"
                             >
                                 Forgot password?
-                            </a>
+                            </Link>
                         </div>
 
                         {error && (
