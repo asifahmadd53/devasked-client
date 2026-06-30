@@ -41,71 +41,15 @@ export default function ForgotPasswordPage() {
     };
 
     return (
-        <div className="min-h-screen w-full">
-
-            <div className="relative lg:flex flex-col justify-between p-12  min-h-screen">
+        <div className="min-h-screen grid lg:grid-cols-2">
+            {/* Left Content Section */}
+            <div className="relative hidden lg:flex flex-col justify-between bg-subtle p-12 text-primary-foreground min-h-screen">
                 {/* Top: Logo */}
                 <div className="relative z-20 shrink-0">
                     <Image width={150} height={150} alt="logo" src="/logo.svg" className="object-cover" />
                 </div>
 
-
-                <div className="flex items-center justify-center p-8">
-                    <div className="w-full border p-4 py-8 rounded-md">
-                        {/* Mobile Logo */}
-                      
-
-                        {/* Header */}
-                        <div className="text-center mb-10">
-                            <h1 className="text-3xl font-bold tracking-tighter mb-2">Forgot Password?</h1>
-                            <p className="text-muted-foreground text-xs">Enter email address and we will send you a link to reset password</p>
-                        </div>
-
-                        {/* Login Form */}
-                        <form onSubmit={handleSubmit} className="space-y-5">
-                            <div className="space-y-2">
-                                <Label htmlFor="email" className="text-sm font-medium">Email</Label>
-                                <Input
-                                    id="email"
-                                    type="email"
-                                    placeholder="anna@gmail.com"
-                                    value={email}
-                                    autoComplete="off"
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    onFocus={() => setIsTyping(true)}
-                                    onBlur={() => setIsTyping(false)}
-                                    required
-                                    
-                                />
-                            </div>
-
-                            {error && (
-                                <div className="p-3 text-sm text-red-400 bg-red-950/20 border border-red-900/30 rounded-lg">
-                                    {error}
-                                </div>
-                            )}
-
-                            <Button
-                                type="submit"
-                                className="w-full h-10 text-base font-medium"
-                                size="lg"
-                                disabled={isLoading}
-                            >
-                                {isLoading ? "Proceeding..." : "Proceed"}
-                            </Button>
-                        </form>
-
-
-                        {/* Sign Up Link */}
-                        <div className="text-center text-sm mt-8">
-                            <Link href="/sign-in" className="text-secondary tracking-tighter font-medium hover:underline">
-                                Back to Sign In
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-
-
+                {/* Bottom: Links */}
                 <div className="relative z-20 flex items-center gap-8 text-sm shrink-0 text-primary">
                     <a href="#" className="text-primary hover:underline">
                         Privacy Policy
@@ -118,9 +62,75 @@ export default function ForgotPasswordPage() {
                     </a>
                 </div>
 
+                {/* Background effects */}
+                <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:20px_20px]" />
+                <div className="absolute top-1/4 right-1/4 size-64 bg-primary-foreground/10 rounded-full blur-3xl" />
+                <div className="absolute bottom-1/4 left-1/4 size-96 bg-primary-foreground/5 rounded-full blur-3xl" />
             </div>
 
+            {/* Right Login Section */}
+            <div className="flex items-center justify-center p-8 bg-background">
+                <div className="w-full max-w-[420px]">
+                    {/* Mobile Logo */}
+                    <div className="lg:hidden flex items-center justify-center gap-2 text-lg font-semibold mb-12">
+                        <div className="size-8 flex items-center justify-center">
+                            <div className="relative z-20 shrink-0">
+                                <Image width={100} height={100} alt="logo" src="/logo.svg" className="object-cover" />
+                            </div>
+                        </div>
 
+                    </div>
+
+                    {/* Header */}
+                    <div className="text-center mb-10">
+                        <h1 className="text-3xl font-bold tracking-tight mb-2">Welcome back!</h1>
+                        <p className="text-muted-foreground text-sm">Please enter your details</p>
+                    </div>
+
+                    {/* Login Form */}
+                    <form onSubmit={handleSubmit} className="space-y-5">
+                        <div className="space-y-2">
+                            <Label htmlFor="email" className="text-sm font-medium">Email</Label>
+                            <Input
+                                id="email"
+                                type="email"
+                                placeholder="anna@gmail.com"
+                                value={email}
+                                autoComplete="off"
+                                onChange={(e) => setEmail(e.target.value)}
+                                onFocus={() => setIsTyping(true)}
+                                onBlur={() => setIsTyping(false)}
+                                required
+                                className=""
+                            />
+                        </div>
+
+                      
+
+
+                        
+                        <Button
+                            type="submit"
+                            className="w-full h-10 text-base font-medium"
+                            size="lg"
+                            disabled={isLoading}
+                        >
+                            {isLoading ? "Signing in..." : "Log in"}
+                        </Button>
+                    </form>
+
+                    {/* Social Login */}
+                  
+
+                    {/* Sign Up Link */}
+                    <div className="text-center text-sm text-muted-foreground mt-8">
+                        {/* Don&apos;t have an account?{" "} */}
+                        <Link href="/sign-in" className="text-secondary font-medium hover:underline">
+                            Back to Sign In?
+                        </Link>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
