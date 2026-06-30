@@ -1,10 +1,10 @@
-import { useMemo } from "react"
+import { useMemo } from "react";
 
 type Segment = {
-    label: string
-    value: number
-    color: string
-}
+    label: string;
+    value: number;
+    color: string;
+};
 
 const segments: Segment[] = [
     { label: "System Design", value: 45, color: "var(--chart-5)" },
@@ -12,23 +12,33 @@ const segments: Segment[] = [
     { label: "DSA", value: 15, color: "var(--chart-2)" },
     { label: "Operating System", value: 10, color: "var(--chart-3)" },
     { label: "DevOps", value: 5, color: "var(--chart-4)" },
-]
+];
 
-const segmentsWithOffset = useMemo(() => {
-    let offset = 0
-    return segments.map((s) => {
-        const dash = (s.value / 100) * circumference
-        const result = { ...s, dash, offset }
-        offset += dash
-        return result
-    })
-}, [segments, circumference])
+type SegmentWithOffset = Segment & {
+    dash: number;
+    offset: number;
+};
 
 export function ProgressDonut() {
-    const radius = 60
-    const stroke = 18
-    const circumference = 2 * Math.PI * radius
-    let offset = 0
+    const radius = 60;
+    const stroke = 18;
+    const circumference = 2 * Math.PI * radius;
+
+    const segmentsWithOffset = useMemo(() => {
+        return segments.reduce<SegmentWithOffset[]>((acc, segment) => {
+            const dash = (segment.value / 100) * circumference;
+
+            const offset = acc.reduce((sum, item) => sum + item.dash, 0);
+
+            acc.push({
+                ...segment,
+                dash,
+                offset,
+            });
+
+            return acc;
+        }, []);
+    }, [circumference]);
 
     return (
         <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-center sm:justify-center sm:gap-8">
@@ -56,12 +66,18 @@ export function ProgressDonut() {
             <ul className="grid grid-cols-1 gap-2 text-sm">
                 {segments.map((s) => (
                     <li key={s.label} className="flex items-center gap-2">
-                        <span className="size-2.5 rounded-full" style={{ backgroundColor: s.color }} aria-hidden="true" />
+                        <span
+                            className="size-2.5 rounded-full"
+                            style={{ backgroundColor: s.color }}
+                            aria-hidden="true"
+                        />
                         <span className="text-muted-foreground">{s.label}</span>
-                        <span className="ml-auto font-semibold text-foreground">{s.value}%</span>
+                        <span className="ml-auto font-semibold text-foreground">
+                            {s.value}%
+                        </span>
                     </li>
                 ))}
             </ul>
         </div>
-    )
+    );
 }
