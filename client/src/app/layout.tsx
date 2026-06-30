@@ -30,7 +30,8 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         {children}
-        <SpeedInsights debug={process.env.NODE_ENV !== "production"} />
+        {/* <SpeedInsights debug={process.env.NODE_ENV !== "production"} /> */}
+        <SpeedInsights/>
       </body>
     </html>
   );
