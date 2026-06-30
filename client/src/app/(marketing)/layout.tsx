@@ -22,7 +22,7 @@ export default function MarketingLayout({
     return (
         <div className="bg-subtle">
             <HeroHeader />
-            <div className={`${montserrat.variable} ${geistMono.variable} h-full antialiased min-h-full flex flex-col`}>
+            <div className={`${montserrat.variable} ${geistMono.variable} h-full antialiased min-h-full flex flex-col px-4`}>
                 {children}
             </div>
             <FooterBlock />

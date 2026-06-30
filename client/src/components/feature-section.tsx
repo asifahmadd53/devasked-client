@@ -5,7 +5,7 @@ import { ProgressDonut } from "@/components/progress-donut"
 export function FeaturesSection() {
     return (
         <section className="py-16 md:py-24">
-            <div className="mx-auto w-full max-w-7xl px-6 space-y-12">
+            <div className="mx-auto w-full max-w-7xl space-y-12">
                 <div className="mx-auto max-w-3xl text-center">
                     <span className="mx-auto flex w-fit items-center gap-2 rounded-full border bg-muted px-3 py-1 text-xs text-muted-foreground">
                         <span className="size-1.5 rounded-full bg-primary/70" />
@@ -14,7 +14,7 @@ export function FeaturesSection() {
                     <h2 className="mt-4 font-medium text-xl md:text-2xl lg:text-3xl">Everything You Need To Succeed</h2>
                 </div>
 
-                <div className="mx-auto grid max-w-5xl gap-3 md:grid-cols-2">
+                <div className="mx-auto grid max-w-6xl gap-3 md:grid-cols-2">
                     {/* Browse & filter */}
                     <div className="group relative overflow-hidden rounded-2xl border bg-background px-6 pt-6 pb-8 md:px-8 md:pt-8">
                         <QuestionBrowser />
@@ -59,7 +59,7 @@ export function FeaturesSection() {
                 </div>
 
                 {/* Full-width browser */}
-                <div className="mx-auto max-w-5xl rounded-2xl border bg-muted/40 p-4 md:p-6">
+                <div className="mx-auto max-w-6xl rounded-2xl border bg-muted/40 p-4 md:p-6">
                     <QuestionBrowser compact />
                 </div>
             </div>

@@ -62,7 +62,7 @@ function CommunityCard({
 export function CommunitySection() {
     return (
         <section className="py-16 md:py-24">
-            <div className="mx-auto w-full max-w-6xl px-4">
+            <div className="mx-auto w-full max-w-6xl">
                 <div className="mx-auto max-w-3xl text-center">
                     <span className="mx-auto flex w-fit items-center gap-2 rounded-full border bg-muted px-3 py-1 text-xs text-muted-foreground">
                         <span className="size-1.5 rounded-full bg-primary/70" />

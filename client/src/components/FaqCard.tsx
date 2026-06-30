@@ -39,7 +39,7 @@ export function FAQSection() {
 
     return (
         <div className="w-full px-4 py-16">
-            <div className="mx-auto max-w-4xl">
+            <div className="mx-auto max-w-5xl">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -119,7 +119,7 @@ export function FAQSection() {
                                                 aria-labelledby={questionId}
                                             >
                                                 <CardContent className="pt-0">
-                                                    <p className="text-foreground/70">                                                    </p>
+                                                    <p className="text-foreground/70">{faq.answer}</p>
                                                 </CardContent>
                                             </motion.div>
                                         )}

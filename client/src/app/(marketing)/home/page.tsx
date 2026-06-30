@@ -32,7 +32,7 @@ export default function HomePage() {
                             priority
                         />
                         <div aria-hidden className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]" />
-                        <div className="mx-auto max-w-7xl px-6">
+                        <div className="mx-auto max-w-7xl">
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
 
                                 <Link
@@ -88,12 +88,12 @@ export default function HomePage() {
                         </div>
 
 
-                        <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
+                        <div className="relative -mr-56 mt-8 overflow-hidden sm:mr-0 sm:mt-12 md:mt-20">
                             <div
                                 aria-hidden
                                 className="bg-gradient-to-b to-subtle absolute inset-0 z-10 from-transparent from-35%"
                             />
-                            <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                            <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl  p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                 <Image
                                     className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
                                     src="https://tailark.com//_next/image?url=%2Fmail2.png&w=3840&q=75"
@@ -113,7 +113,7 @@ export default function HomePage() {
                     </div>
                 </section>
                 <section className="pb-16 md:pb-32">
-                    <div className="group relative m-auto max-w-5xl px-6">
+                    <div className="group relative m-auto max-w-5xl ">
                         <div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
                             <Link
                                 href="/"
@@ -139,7 +139,7 @@ export default function HomePage() {
                             </p>
                         </div>
 
-                        <div className="w-full border">
+                        <div className="w-full">
                             <div className="grid grid-cols-1 w-full gap-6 sm:grid-cols-2 md:grid-cols-3">
                                 {problems.map((feature) => (
                                     <ProblemCard problem={feature} key={feature.title} />
