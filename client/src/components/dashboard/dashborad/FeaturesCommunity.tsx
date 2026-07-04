@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export function FeaturedCommunity() {
     return (
-        <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg p-6 text-white">
+        <div className="bg-linear-to-br from-slate-900 to-slate-800 rounded-lg p-6 text-white">
             <div className="flex items-start justify-between mb-4">
                 <div>
                     <span className="inline-block px-3 py-1 bg-blue-600 rounded text-xs font-semibold mb-2">
