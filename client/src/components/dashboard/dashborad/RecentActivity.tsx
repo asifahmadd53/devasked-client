@@ -45,7 +45,7 @@ export function RecentActivity({ activities }: RecentActivityProps) {
                                         {/* <Avatar src={activity.user.avatar} alt={activity.user.name} size="sm" /> */}
                                         <div>
                                             <p className="text-sm font-medium text-slate-900">
-                                                <Link href={`/user/${activity.user.username}`} className="text-blue-600 hover:underline">
+                                                <Link href={`/user/${activity.user.username}`} className="text-secondary hover:underline">
                                                     {activity.user.name}
                                                 </Link>
                                                 {' '}

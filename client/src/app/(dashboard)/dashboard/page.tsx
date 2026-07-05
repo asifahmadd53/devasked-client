@@ -10,12 +10,12 @@ import { mockActivities, mockQuizProgress, mockTrendingQuestions } from "@/lib/m
 export default function Dashboard() {
     return (
         <ContentLayout title="Dashboard">
-                <div className="mb-8">
-                    <h1 className="text-3xl font-bold text-slate-900">Welcome back!</h1>
-                    <p className="text-slate-600 mt-2">Here&apos;s your learning dashboard</p>
+                <div className="mb-4">
+                    <h1 className="text-3xl font-bold text-primary">Welcome back!</h1>
+                    <p className="text-slate-500 mt-2">Here&apos;s your learning dashboard</p>
                 </div>
             <StatisticCard12/>
-            <div className="py-8">
+            <div className="py-4">
                 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                    

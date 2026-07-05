@@ -4,20 +4,23 @@ import { Eye, MessageSquare } from 'lucide-react';
 import { Question } from '@/types/dashboard';
 import { Badge } from '@/components/ui/badge';
 
+
 interface TrendingQuestionsProps {
     questions: Question[];
 }
 
 function getBadgeVariant(tag: string) {
     const tagLower = tag.toLowerCase();
-    if (tagLower === 'startup') return 'startup';
-    if (tagLower === 'big tech') return 'bigtech';
-    if (tagLower === 'hard') return 'hard';
+    if (tagLower === 'startup') return 'secondary';
+    if (tagLower === 'big tech') return 'default';
+    if (tagLower === 'hard') return 'destructive';
     if (tagLower === 'medium') return 'medium';
     if (tagLower === 'easy') return 'easy';
-    if (tagLower === 'react') return 'react';
+    if (tagLower === 'react') return 'frontend';
+    if (tagLower === 'frontend') return 'frontend';
     if (tagLower === 'node.js') return 'nodejs';
     if (tagLower === 'aws') return 'aws';
+    if (tagLower === 'mid-level') return 'midlevel';
     if (tagLower === 'python') return 'python';
     if (tagLower === 'hooks') return 'hooks';
     if (tagLower === 'backend') return 'backend';
@@ -29,8 +32,8 @@ export function TrendingQuestions({ questions }: TrendingQuestionsProps) {
     return (
         <div className="bg-white rounded-lg border border-slate-200 p-6">
             <div className="flex items-center justify-between mb-6">
-                <h3 className="text-lg font-semibold text-slate-900">Trending Questions</h3>
-                <Link href="/questions" className="text-blue-600 text-sm font-medium hover:underline">
+                <h3 className="text-lg font-semibold text-primary">Trending Questions</h3>
+                <Link href="/questions" className="text-secondary text-sm font-medium hover:underline">
                     View All →
                 </Link>
             </div>
@@ -43,7 +46,7 @@ export function TrendingQuestions({ questions }: TrendingQuestionsProps) {
                     >
                         {/* Title */}
                         <Link href={`/questions/${question.id}`}>
-                            <h4 className="font-semibold text-slate-900 group-hover:text-blue-600 mb-2 text-sm line-clamp-2 cursor-pointer">
+                            <h4 className="font-semibold text-primary mb-2 text-sm line-clamp-2 cursor-pointer">
                                 {question.title}
                             </h4>
                         </Link>
@@ -71,7 +74,7 @@ export function TrendingQuestions({ questions }: TrendingQuestionsProps) {
                             </div>
                             <Link
                                 href={`/questions/${question.id}`}
-                                className="text-blue-600 hover:underline font-medium"
+                                className="text-secondary hover:underline font-medium"
                             >
                                 View Details →
                             </Link>
