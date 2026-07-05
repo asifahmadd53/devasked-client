@@ -23,6 +23,7 @@ const badgeVariants = cva(
         medium: 'bg-yellow-100 text-yellow-700',
         easy: 'bg-green-100 text-green-700',
         react: 'bg-slate-100 text-slate-600',
+        startup: 'bg-subtle text-slate-600',
         nodejs: 'bg-green-50 text-green-600',
         aws: 'bg-orange-50 text-orange-600',
         python: 'bg-blue-900 text-white',
