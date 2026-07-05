@@ -18,6 +18,18 @@ const badgeVariants = cva(
         ghost:
           "hover:bg-muted hover:text-muted-foreground dark:hover:bg-muted/50",
         link: "text-primary underline-offset-4 hover:underline",
+       
+        midlevel: 'bg-subtle text-subtle-foreground [a]:hover:bg-subtle/80',
+        medium: 'bg-yellow-100 text-yellow-700',
+        easy: 'bg-green-100 text-green-700',
+        react: 'bg-slate-100 text-slate-600',
+        nodejs: 'bg-green-50 text-green-600',
+        aws: 'bg-orange-50 text-orange-600',
+        python: 'bg-blue-900 text-white',
+        hooks: 'bg-purple-50 text-purple-600',
+        frontend: 'bg-cyan-50 text-cyan-600',
+        backend: 'bg-slate-100 text-slate-600',
+        systemdesign: 'bg-indigo-50 text-indigo-600',
       },
     },
     defaultVariants: {
@@ -46,3 +58,4 @@ function Badge({
 }
 
 export { Badge, badgeVariants }
+

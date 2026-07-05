@@ -1,48 +1,79 @@
 'use client';
-import { PieChart, Pie, Cell, Legend, ResponsiveContainer } from 'recharts';
+
+import dynamic from 'next/dynamic';
 import { QuizProgress } from '@/types/dashboard';
+import { ApexOptions } from 'apexcharts';
+
+const Chart = dynamic(() => import('react-apexcharts'), {
+    ssr: false,
+});
 
 interface ProgressChartProps {
     data: QuizProgress[];
 }
 
 export function ProgressChart({ data }: ProgressChartProps) {
-    const chartData = data.map((item) => ({
-        name: item.topic,
-        value: item.percentage,
-        color: item.color,
-    }));
+    const series = data.map((item) => item.percentage);
+
+    const options: ApexOptions = {
+        chart: {
+            type: 'donut',
+            toolbar: {
+                show: false,
+            },
+        },
+        labels: data.map((item) => item.topic),
+        colors: data.map((item) => item.color),
+        legend: {
+            position: 'bottom',
+            fontSize: '14px',
+            formatter: (seriesName, opts) => {
+                return `${seriesName} ${opts.w.globals.series[opts.seriesIndex]}%`;
+            },
+        },
+        dataLabels: {
+            enabled: false,
+        },
+        stroke: {
+            width: 2,
+            colors: ['#fff'],
+        },
+        plotOptions: {
+            pie: {
+                donut: {
+                    size: '75%',
+                },
+            },
+        },
+        tooltip: {
+            y: {
+                formatter: (value) => `${value}%`,
+            },
+        },
+        responsive: [
+            {
+                breakpoint: 640,
+                options: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                },
+            },
+        ],
+    };
 
     return (
         <div className="bg-white rounded-lg border border-slate-200 p-6">
-            <h3 className="text-lg font-semibold text-slate-900 mb-6">Progress based on Quiz Score</h3>
-            <ResponsiveContainer width="100%" height={250}>
-                <PieChart>
-                    <Pie
-                        data={chartData}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={60}
-                        outerRadius={100}
-                        paddingAngle={2}
-                        dataKey="value"
-                        startAngle={90}
-                        endAngle={450}
-                    >
-                        {chartData.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={entry.color} />
-                        ))}
-                    </Pie>
-                    <Legend
-                        verticalAlign="bottom"
-                        height={36}
-                        formatter={(value, entry) => {
-                            const item = entry.payload;
-                            return `${item.name} ${item.value}%`;
-                        }}
-                    />
-                </PieChart>
-            </ResponsiveContainer>
+            <h3 className="mb-6 text-lg font-semibold text-slate-900">
+                Progress based on Quiz Score
+            </h3>
+
+            <Chart
+                options={options}
+                series={series}
+                type="donut"
+                height={300}
+            />
         </div>
     );
 }

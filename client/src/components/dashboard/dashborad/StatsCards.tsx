@@ -35,14 +35,14 @@ const cards = [
 export default function StatisticCard12() {
     return (
         <div className="w-full flex items-center justify-center">
-            <div className="@container grow w-full">
+            <div className="grow w-full">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full lg:grid-cols-4 gap-5 ">
                     {cards.map((card, i) => (
                         <Card key={i}>
                             <CardContent className="flex flex-col items-start gap-6">
                                 {/* Icon */}
-                                <div className={cn(`rounded-xl p-1 flex items-center justify-center  border`)}>
-                                    <card.icon className="size-6" />
+                                <div className={cn(`rounded-xl p-2 bg-subtle flex items-center justify-center  border`)}>
+                                    <card.icon className="size-6 text-primary" />
                                 </div>
 
                                 {/* Value & Label */}
