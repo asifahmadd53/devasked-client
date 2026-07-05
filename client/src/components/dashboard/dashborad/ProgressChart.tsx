@@ -14,6 +14,7 @@ interface ProgressChartProps {
 
 export function ProgressChart({ data }: ProgressChartProps) {
     const series = data.map((item) => item.percentage);
+    
 
     const options: ApexOptions = {
         chart: {
@@ -28,7 +29,8 @@ export function ProgressChart({ data }: ProgressChartProps) {
             position: 'bottom',
             fontSize: '14px',
             formatter: (seriesName, opts) => {
-                return `${seriesName} ${opts.w.globals.series[opts.seriesIndex]}%`;
+                const value = opts?.w.globals.series[opts.seriesIndex] ?? "";
+                return `${seriesName} ${value}%`;
             },
         },
         dataLabels: {
