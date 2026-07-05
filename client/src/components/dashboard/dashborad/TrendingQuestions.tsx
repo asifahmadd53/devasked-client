@@ -24,6 +24,7 @@ function getBadgeVariant(tag: string) {
     if (tagLower === 'python') return 'python';
     if (tagLower === 'hooks') return 'hooks';
     if (tagLower === 'backend') return 'backend';
+    if (tagLower === 'startup') return 'startup';
     if (tagLower === 'system design') return 'systemdesign';
     return 'startup';
 }
