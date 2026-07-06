@@ -63,11 +63,11 @@ export function getMenuList(pathname: string): Group[] {
           label: "Questions",
           icon: Bookmark,
         },
-        {
-          href: "/tags",
-          label: "Tags",
-          icon: Tag,
-        },
+        // {
+        //   href: "/tags",
+        //   label: "Tags",
+        //   icon: Tag,
+        // },
         {
           href: "/quizes",
           label: "Quizes",

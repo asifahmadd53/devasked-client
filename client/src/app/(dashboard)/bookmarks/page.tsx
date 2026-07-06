@@ -101,7 +101,7 @@ export default function BookMarksPage() {
                     {/* Question List */}
                     {paginatedQuestions.length > 0 ? (
                         <>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                            <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mb-8">
                                 {paginatedQuestions.map((question) => (
                                     <QuestionCard key={question.id} question={question} layout="grid" />
                                 ))}
