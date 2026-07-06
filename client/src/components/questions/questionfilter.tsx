@@ -4,7 +4,7 @@ import { ChevronDown } from 'lucide-react';
 import { CompanyType, DifficultyLevel, TechStackType } from '@/types/dashboard';
 import { FilterTabs } from './filterButton';
 import { TechFilter } from './techFilter';
-import { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '../ui/select';
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
 
 interface QuestionFiltersProps {
     onCompanyTypeChange: (type: CompanyType) => void;
@@ -87,18 +87,21 @@ export function QuestionFilters({
 
 
                         <div>
-                            <Select value={selectedSort} onValueChange={(value) => value && onSortChange(value)} aria-label="Select framework">
-                                <SelectTrigger>
-                                    <SelectValue  placeholder="Select framework" />
+                            
+                            < Select items={selectedSort} onValueChange={(value) => value && onSortChange(value)} aria-label="Select framework">
+                                <SelectTrigger className="w-[180px]">
+                                    <SelectValue placeholder="Select framework" />
                                 </SelectTrigger>
-                                <SelectPopup className='rounded-xs' alignItemWithTrigger={false}>
-                                    {sortOptions.map((option) => (
-                                        <SelectItem key={option} value={option}>
-                                            {option}
-                                        </SelectItem>
-                                    ))}
-                                </SelectPopup>
-                            </Select>
+                                <SelectContent>
+                                    <SelectGroup>
+                                        {sortOptions.map((option) => (
+                                            <SelectItem key={option} value={option}>
+                                                {option}
+                                            </SelectItem>
+                                        ))}
+                                    </SelectGroup>
+                                </SelectContent>
+                            </Select >
                         </div>
 
 
@@ -114,3 +117,8 @@ export function QuestionFilters({
         </div>
     );
 }
+
+
+
+
+  
