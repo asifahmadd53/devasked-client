@@ -3,6 +3,7 @@
 
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ReactNode } from 'react';
+import { Badge } from '../ui/badge';
 
 interface FilterTabsProps<T extends string> {
     options: T[];
@@ -18,15 +19,20 @@ export function FilterTabs<T extends string>({
     icons,
 }: FilterTabsProps<T>) {
     return (
-        <Tabs value={value} onValueChange={(val) => onChange(val as T)}>
+        <Tabs className='' value={value} onValueChange={(val) => onChange(val as T)}>
             <TabsList variant="line">
                 {options.map((option) => (
-                    <TabsTrigger key={option} value={option}>
+                    <TabsTrigger className=" rounded-md px-3 py-1 bg-primary" key={option} value={option}>
                         {icons?.[option]}
                         {option}
                     </TabsTrigger>
                 ))}
+                <Badge className="h-5 w-5 p-0 flex items-center justify-center rounded-full text-[10px]">
+                    5
+                </Badge>
             </TabsList>
         </Tabs>
+
+        
     );
 }

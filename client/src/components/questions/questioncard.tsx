@@ -2,9 +2,11 @@
 
 import Link from 'next/link';
 import { Eye, Bookmark } from 'lucide-react';
-import { Avatar, AvatarGroup } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback, AvatarGroup, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Question } from '@/types/dashboard';
+import { Separator } from '../ui/separator';
+import { Button } from '../ui/button';
 
 interface QuestionCardProps {
     question: Question;
@@ -44,7 +46,10 @@ export function QuestionCard({
             {/* Header with user info and bookmark */}
             <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-2">
-                    <Avatar src={question.askedBy.avatar} alt={question.askedBy.name} size="sm" />
+                    <Avatar>
+                        <AvatarImage src="https://originui.com/avatar-80-07.jpg" alt="Kelly King" />
+                        <AvatarFallback>KK</AvatarFallback>
+                    </Avatar>
                     <div>
                         <span className="text-xs text-slate-500">Asked by</span>
                         <Link
@@ -57,12 +62,12 @@ export function QuestionCard({
                 </div>
                 <button
                     onClick={() => onBookmarkToggle?.(question.id)}
-                    className="text-slate-400 hover:text-blue-600 transition"
+                    className="text-slate-400 hover:text-secondary transition"
                 >
                     <Bookmark
                         className="w-5 h-5"
-                        fill={question.bookmarked ? '#3b82f6' : 'none'}
-                        color={question.bookmarked ? '#3b82f6' : 'currentColor'}
+                        fill={question.bookmarked ? '#68B2F1' : 'none'}
+                        color={question.bookmarked ? '#68B2F1' : 'currentColor'}
                     />
                 </button>
             </div>
@@ -77,39 +82,62 @@ export function QuestionCard({
             {/* Tags */}
             <div className="flex flex-wrap gap-2 mb-3">
                 {question.tags.map((tag) => (
-                    <Badge key={tag} variant={getBadgeVariant(tag)}>
+                    <Badge className='p-2 py-3' key={tag} variant={getBadgeVariant(tag)}>
                         {tag}
                     </Badge>
                 ))}
             </div>
 
             {/* Metadata */}
-            <div className="flex items-center justify-between mt-auto pt-3 border-t border-slate-100 text-xs text-slate-600">
-                <div className="flex items-center gap-3">
+            <Separator/>
+            <div className="flex items-center justify-between mt-auto pt-3 text-xs text-slate-600">
+                <div className="flex items-center pl-2 gap-3">
                     <span>{question.createdAt}</span>
                     <div className="flex items-center gap-1">
                         <Eye className="w-4 h-4" />
                         {question.views}
                     </div>
                 </div>
-                <div className="flex items-center gap-2">
-                    {question.savedBy.length > 0 && (
-                        <AvatarGroup avatars={question.savedBy.map(u => ({
-                            src: u.avatar,
-                            alt: u.name
-                        }))} max={2} size="sm" />
-                    )}
-                    <span className="font-medium text-slate-700">{question.saves} Devs Saved</span>
+                <div className="flex items-center gap-3">
+
+                <div className="flex items-center rounded-full p-0.5 gap-1.5 border border-border shadow-sm shadow-black/5">
+                    <div className="flex -space-x-3">
+                        <Avatar className="size-7">
+                            <AvatarImage src="https://avatars.githubusercontent.com/u/124599?v=4" alt="@reui" className="border-2 border-background hover:z-10" />
+                            <AvatarFallback>CH</AvatarFallback>
+                        </Avatar>
+                        <Avatar className="size-7">
+                            <AvatarImage src="https://avatars.githubusercontent.com/u/124599?v=4" alt="@reui" className="border-2 border-background hover:z-10" />
+                            <AvatarFallback>CH</AvatarFallback>
+                        </Avatar>
+                        <Avatar className="size-7">
+                            <AvatarImage src="https://avatars.githubusercontent.com/u/124599?v=4" alt="@reui" className="border-2 border-background hover:z-10" />
+                            <AvatarFallback>CH</AvatarFallback>
+                        </Avatar>
+                        <Avatar className="size-7">
+                            <AvatarImage src="https://avatars.githubusercontent.com/u/124599?v=4" alt="@reui" className="border-2 border-background hover:z-10" />
+                            <AvatarFallback>CH</AvatarFallback>
+                        </Avatar>
+                    </div>
+                    
+
+                    <p className="text-xs text-muted-foreground me-1.5">
+                        <span className="font-semibold text-foreground">18 Devs Saved</span>.
+                    </p>
+                    
+               
                 </div>
+                <Button>
+                    <Link href={`/questions/${question.id}`} className="text-sm font-medium  hover:underline ">
+                    View Details
+                    </Link>
+                </Button>
+                </div>
+
             </div>
 
             {/* View Details Button */}
-            <Link
-                href={`/questions/${question.id}`}
-                className="mt-3 w-full py-2 text-center bg-slate-900 text-white rounded font-medium hover:bg-slate-800 transition"
-            >
-                View Details
-            </Link>
+            
         </div>
     );
 }
