@@ -113,11 +113,19 @@ export default function QuestionDetailPage({ params }: QuestionDetailPageProps) 
                             </div>
                         </div>
                         <div className="flex items-center gap-3">
-                            <AvatarGroup
-                                avatars={question.savedBy.map(u => ({ src: u.avatar, alt: u.name }))}
-                                max={3}
-                                size="sm"
-                            />
+                            <AvatarGroup>
+                                {question.savedBy.slice(0, 3).map((u, i) => (
+                                    <Avatar key={i} size="sm">
+                                        <AvatarImage src={u.avatar} alt={u.name} />
+                                        <AvatarFallback>{u.name?.charAt(0).toUpperCase()}</AvatarFallback>
+                                    </Avatar>
+                                ))}
+                                {question.savedBy.length > 3 && (
+                                    <Avatar size="sm">
+                                        <AvatarFallback>+{question.savedBy.length - 3}</AvatarFallback>
+                                    </Avatar>
+                                )}
+                            </AvatarGroup>
                             <span className="text-sm font-medium text-slate-700">{question.saves} Devs Saved</span>
                         </div>
                     </div>
