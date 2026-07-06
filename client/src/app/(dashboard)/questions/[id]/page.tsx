@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ChevronUp, Eye, Bookmark } from 'lucide-react';
 
-import { Avatar, AvatarGroup } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback, AvatarGroup, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { mockQuestions } from '@/lib/mock-data';
 
@@ -60,7 +60,12 @@ export default function QuestionDetailPage({ params }: QuestionDetailPageProps) 
                     {/* Header with user and bookmark */}
                     <div className="flex items-start justify-between mb-4">
                         <div className="flex items-center gap-3">
-                            <Avatar src={question.askedBy.avatar} alt={question.askedBy.name} size="md" />
+                            <Avatar size="default">
+                                <AvatarImage src={question.askedBy.avatar} alt={question.askedBy.name} />
+                                <AvatarFallback>
+                                    {question.askedBy.name?.charAt(0).toUpperCase()}
+                                </AvatarFallback>
+                            </Avatar>
                             <div>
                                 <span className="text-xs text-slate-500">Asked by</span>
                                 <Link href={`/user/${question.askedBy.username}`} className="font-semibold text-blue-600 hover:underline block">
