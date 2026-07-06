@@ -13,7 +13,7 @@ interface FilterTabsProps<T extends string> {
 }
 
 export function FilterTabs<T extends string>({
-    options,
+    options = [],
     value,
     onChange,
     icons,
