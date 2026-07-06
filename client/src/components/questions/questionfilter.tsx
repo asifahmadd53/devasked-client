@@ -4,7 +4,7 @@ import { ChevronDown } from 'lucide-react';
 import { CompanyType, DifficultyLevel, TechStackType } from '@/types/dashboard';
 import { FilterTabs } from './filterButton';
 import { TechFilter } from './techFilter';
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '../ui/select';
 
 interface QuestionFiltersProps {
     onCompanyTypeChange: (type: CompanyType) => void;
@@ -87,21 +87,33 @@ export function QuestionFilters({
 
 
                         <div>
+                            {/* <Select value={selectedSort} onValueChange={(value) => value && onSortChange(value)} aria-label="Select framework">
+                                <SelectTrigger>
+                                    <SelectValue  placeholder="Select framework" />
+                                </SelectTrigger>
+                                <SelectPopup className='rounded-xs' alignItemWithTrigger={false}>
+                                    {sortOptions.map((option) => (
+                                        <SelectItem key={option} value={option}>
+                                            {option}
+                                        </SelectItem>
+                                    ))}
+                                </SelectPopup>
+                            </Select> */}
                             
-                            < Select items={selectedSort} onValueChange={(value) => value && onSortChange(value)} aria-label="Select framework">
-                                <SelectTrigger className="w-[180px]">
+                            <Select value={selectedSort} onValueChange={(value) => value && onSortChange(value)} aria-label="Select framework">
+                                <SelectTrigger className="w-45">
                                     <SelectValue placeholder="Select framework" />
                                 </SelectTrigger>
                                 <SelectContent>
                                     <SelectGroup>
                                         {sortOptions.map((option) => (
-                                            <SelectItem key={option} value={option}>
+                                            <SelectItem className='w-45' key={option} value={option}>
                                                 {option}
                                             </SelectItem>
                                         ))}
                                     </SelectGroup>
                                 </SelectContent>
-                            </Select >
+                            </Select>
                         </div>
 
 
@@ -117,8 +129,3 @@ export function QuestionFilters({
         </div>
     );
 }
-
-
-
-
-  
