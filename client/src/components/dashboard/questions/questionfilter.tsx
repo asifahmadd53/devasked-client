@@ -4,7 +4,7 @@ import { ChevronDown } from 'lucide-react';
 import { CompanyType, DifficultyLevel, TechStackType } from '@/types/dashboard';
 import { FilterTabs } from './filterButton';
 import { TechFilter } from './techFilter';
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '../ui/select';
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '../../ui/select';
 
 interface QuestionFiltersProps {
     onCompanyTypeChange: (type: CompanyType) => void;
@@ -36,7 +36,7 @@ export function QuestionFilters({
         <div className="space-y-6 mb-8">
             {/* Company Type Filter */}
             <div>
-                <div className="flex items-center gap-8 mb-3">
+                <div className="flex flex-col lg:flex-row lg:gap-8 mb-1">
                     <label className="text-sm font-bold text-slate-900 uppercase tracking-wider">
                         Company Type
                     </label>
@@ -46,20 +46,20 @@ export function QuestionFilters({
                         onChange={onCompanyTypeChange}
                     />
                 </div>
-                
+
             </div>
 
             {/* Difficulty Level Filter */}
             <div>
-                <div className="flex items-center gap-6 mb-3">
+                <div className="flex flex-col lg:flex-row lg:gap-8 mb-1">
                     <label className="text-sm font-bold text-slate-900 uppercase tracking-wider">
                         Difficulty Level
                     </label>
-                <FilterTabs
-                    options={difficulties}
-                    value={selectedDifficulty}
-                    onChange={onDifficultyChange}
-                />
+                    <FilterTabs
+                        options={difficulties}
+                        value={selectedDifficulty}
+                        onChange={onDifficultyChange}
+                    />
                 </div>
             </div>
 
@@ -67,10 +67,10 @@ export function QuestionFilters({
             <div>
                 <div className="flex items-center gap-6 mb-3">
                     <label className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
-                        <span>Tech Stack:</span>
+                        <span >Tech Stack:</span>
                     </label>
                 </div>
-                <div className="flex items-center justify-between gap-2">
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-2">
                     <TechFilter
                         options={techStacks}
                         value={selectedTechStack}
@@ -80,9 +80,9 @@ export function QuestionFilters({
                         <ChevronDown className="w-4 h-4" />
                     </button> */}
 
-                    <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2 mr-2">
-                            <span className="text-sm font-semibold text-primary/80 tracking-wider">Sort By:</span>
+                    <div className="flex items-center lg:gap-4 justify-between">
+                        <div className="flex items-center gap-2">
+                            <span className="text-sm font-semibold text-primary/80 tracking-wider whitespace-nowrap">Sort By:</span>
                         </div>
 
 
@@ -99,7 +99,7 @@ export function QuestionFilters({
                                     ))}
                                 </SelectPopup>
                             </Select> */}
-                            
+
                             <Select value={selectedSort} onValueChange={(value) => value && onSortChange(value)} aria-label="Select framework">
                                 <SelectTrigger className="w-45">
                                     <SelectValue placeholder="Select framework" />
@@ -120,12 +120,12 @@ export function QuestionFilters({
                     </div>
 
                 </div>
-                
+
             </div>
 
             {/* Sort Options */}
 
-          
+
         </div>
     );
 }

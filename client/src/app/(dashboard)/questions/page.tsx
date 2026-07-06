@@ -7,9 +7,9 @@ import { useState, useMemo } from 'react';
 import { mockQuestions } from '@/lib/mock-data';
 import { CompanyType, DifficultyLevel, TechStackType, Question } from '@/types/dashboard';
 import { ContentLayout } from '@/components/layout/DashboardContent';
-import { QuestionFilters } from '@/components/questions/questionfilter';
-import { QuestionCard } from '@/components/questions/questioncard';
-import { Pagination } from '@/components/questions/pagination';
+import { QuestionFilters } from '@/components/dashboard/questions/questionfilter';
+import { QuestionCard } from '@/components/dashboard/questions/questioncard';
+import { Pagination } from '@/components/dashboard/questions/pagination';
 
 const ITEMS_PER_PAGE = 11;
 
@@ -73,65 +73,65 @@ export default function QuestionsPage() {
 
     return (
         <ContentLayout title="Questions">
-        <main className="min-h-screen">
-            <div className="max-w-6xl mx-auto ">
-                {/* Breadcrumb */}
-                {/* <Breadcrumb items={[{ label: 'Dashboard', href: '/' }, { label: 'Questions' }]} /> */}
+            <main className="min-h-screen">
+                <div className="max-w-6xl mx-auto ">
+                    {/* Breadcrumb */}
+                    {/* <Breadcrumb items={[{ label: 'Dashboard', href: '/' }, { label: 'Questions' }]} /> */}
 
-                {/* Header */}
-                <div className="flex items-center justify-between mb-8">
-                    <div>
-                        <h1 className="text-3xl font-bold text-slate-900">Questions</h1>
-                        <p className="text-slate-600 mt-1">View and browse questions from different tech stacks</p>
-                    </div>
-                    {/* <AddQuestionModal onQuestionAdded={handleQuestionAdded}>
+                    {/* Header */}
+                    <div className="flex items-center justify-between mb-8">
+                        <div>
+                            <h1 className="text-3xl font-bold text-slate-900">Questions</h1>
+                            <p className="text-slate-600 mt-1">View and browse questions from different tech stacks</p>
+                        </div>
+                        {/* <AddQuestionModal onQuestionAdded={handleQuestionAdded}>
                         <button className="px-4 py-2 bg-slate-900 text-white rounded font-medium hover:bg-slate-800 transition">
                             + New Question
                         </button>
                     </AddQuestionModal> */}
-                </div>
+                    </div>
 
-                {/* Filters */}
-                <QuestionFilters
-                    selectedCompanyType={selectedCompanyType}
-                    selectedDifficulty={selectedDifficulty}
-                    selectedTechStack={selectedTechStack}
-                    selectedSort={selectedSort}
-                    onCompanyTypeChange={setSelectedCompanyType}
-                    onDifficultyChange={setSelectedDifficulty}
-                    onTechStackChange={setSelectedTechStack}
-                    onSortChange={setSelectedSort}
-                />
-
-                {/* Results Count */}
-                <div className="mb-6 text-sm text-slate-600">
-                    Showing {(currentPage - 1) * ITEMS_PER_PAGE + 1} of {filteredQuestions.length} Questions
-                </div>
-
-                {/* Question List */}
-                <div className="space-y-4 mb-8">
-                    {paginatedQuestions.map((question) => (
-                        <QuestionCard
-                            key={question.id}
-                            question={{
-                                ...question,
-                                bookmarked: bookmarkedQuestions.includes(question.id),
-                            }}
-                            onBookmarkToggle={handleBookmarkToggle}
-                        />
-                    ))}
-                </div>
-
-                {/* Pagination */}
-                {totalPages > 1 && (
-                    <Pagination
-                        currentPage={currentPage}
-                        totalPages={totalPages}
-                        onPageChange={setCurrentPage}
+                    {/* Filters */}
+                    <QuestionFilters
+                        selectedCompanyType={selectedCompanyType}
+                        selectedDifficulty={selectedDifficulty}
+                        selectedTechStack={selectedTechStack}
+                        selectedSort={selectedSort}
+                        onCompanyTypeChange={setSelectedCompanyType}
+                        onDifficultyChange={setSelectedDifficulty}
+                        onTechStackChange={setSelectedTechStack}
+                        onSortChange={setSelectedSort}
                     />
-                )}
-            </div>
-        </main>
+
+                    {/* Results Count */}
+                    <div className="mb-6 text-sm text-slate-600">
+                        Showing {(currentPage - 1) * ITEMS_PER_PAGE + 1} of {filteredQuestions.length} Questions
+                    </div>
+
+                    {/* Question List */}
+                    <div className="space-y-4 mb-8">
+                        {paginatedQuestions.map((question) => (
+                            <QuestionCard
+                                key={question.id}
+                                question={{
+                                    ...question,
+                                    bookmarked: bookmarkedQuestions.includes(question.id),
+                                }}
+                                onBookmarkToggle={handleBookmarkToggle}
+                            />
+                        ))}
+                    </div>
+
+                    {/* Pagination */}
+                    {totalPages > 1 && (
+                        <Pagination
+                            currentPage={currentPage}
+                            totalPages={totalPages}
+                            onPageChange={setCurrentPage}
+                        />
+                    )}
+                </div>
+            </main>
         </ContentLayout>
     );
 }

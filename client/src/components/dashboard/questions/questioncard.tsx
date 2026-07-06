@@ -5,8 +5,8 @@ import { Eye, Bookmark } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarGroup, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Question } from '@/types/dashboard';
-import { Separator } from '../ui/separator';
-import { Button } from '../ui/button';
+import { Separator } from '../../ui/separator';
+import { Button } from '../../ui/button';
 
 interface QuestionCardProps {
     question: Question;
@@ -89,8 +89,8 @@ export function QuestionCard({
             </div>
 
             {/* Metadata */}
-            <Separator/>
-            <div className="flex items-center justify-between mt-auto pt-3 text-xs text-slate-600">
+            <Separator />
+            <div className="flex flex-col md:flex-row gap-4 md:items-center justify-between mt-auto pt-3 text-xs text-slate-600">
                 <div className="flex items-center pl-2 gap-3">
                     <span>{question.createdAt}</span>
                     <div className="flex items-center gap-1">
@@ -98,46 +98,46 @@ export function QuestionCard({
                         {question.views}
                     </div>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3">
 
-                <div className="flex items-center rounded-full p-0.5 gap-1.5 border border-border shadow-sm shadow-black/5">
-                    <div className="flex -space-x-3">
-                        <Avatar className="size-7">
-                            <AvatarImage src="https://avatars.githubusercontent.com/u/124599?v=4" alt="@reui" className="border-2 border-background hover:z-10" />
-                            <AvatarFallback>CH</AvatarFallback>
-                        </Avatar>
-                        <Avatar className="size-7">
-                            <AvatarImage src="https://avatars.githubusercontent.com/u/124599?v=4" alt="@reui" className="border-2 border-background hover:z-10" />
-                            <AvatarFallback>CH</AvatarFallback>
-                        </Avatar>
-                        <Avatar className="size-7">
-                            <AvatarImage src="https://avatars.githubusercontent.com/u/124599?v=4" alt="@reui" className="border-2 border-background hover:z-10" />
-                            <AvatarFallback>CH</AvatarFallback>
-                        </Avatar>
-                        <Avatar className="size-7">
-                            <AvatarImage src="https://avatars.githubusercontent.com/u/124599?v=4" alt="@reui" className="border-2 border-background hover:z-10" />
-                            <AvatarFallback>CH</AvatarFallback>
-                        </Avatar>
+                    <div className="flex items-center rounded-full p-0.5 gap-1.5 border border-border shadow-sm shadow-black/5">
+                        <div className="flex -space-x-3">
+                            <Avatar className="size-7">
+                                <AvatarImage src="https://avatars.githubusercontent.com/u/124599?v=4" alt="@reui" className="border-2 border-background hover:z-10" />
+                                <AvatarFallback>CH</AvatarFallback>
+                            </Avatar>
+                            <Avatar className="size-7">
+                                <AvatarImage src="https://avatars.githubusercontent.com/u/124599?v=4" alt="@reui" className="border-2 border-background hover:z-10" />
+                                <AvatarFallback>CH</AvatarFallback>
+                            </Avatar>
+                            <Avatar className="size-7">
+                                <AvatarImage src="https://avatars.githubusercontent.com/u/124599?v=4" alt="@reui" className="border-2 border-background hover:z-10" />
+                                <AvatarFallback>CH</AvatarFallback>
+                            </Avatar>
+                            <Avatar className="size-7">
+                                <AvatarImage src="https://avatars.githubusercontent.com/u/124599?v=4" alt="@reui" className="border-2 border-background hover:z-10" />
+                                <AvatarFallback>CH</AvatarFallback>
+                            </Avatar>
+                        </div>
+
+
+                        <p className="text-xs text-muted-foreground me-1.5">
+                            <span className="font-semibold text-foreground">18 Devs Saved</span>.
+                        </p>
+
+
                     </div>
-                    
-
-                    <p className="text-xs text-muted-foreground me-1.5">
-                        <span className="font-semibold text-foreground">18 Devs Saved</span>.
-                    </p>
-                    
-               
-                </div>
-                <Button>
-                    <Link href={`/questions/${question.id}`} className="text-sm font-medium  hover:underline ">
-                    View Details
-                    </Link>
-                </Button>
+                    <Button>
+                        <Link href={`/questions/${question.id}`} className="text-sm font-medium  hover:underline ">
+                            View Details
+                        </Link>
+                    </Button>
                 </div>
 
             </div>
 
             {/* View Details Button */}
-            
+
         </div>
     );
 }

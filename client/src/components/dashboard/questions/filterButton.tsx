@@ -3,7 +3,7 @@
 
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ReactNode } from 'react';
-import { Badge } from '../ui/badge';
+import { Badge } from '../../ui/badge';
 
 interface FilterTabsProps<T extends string> {
     options: T[];
@@ -19,7 +19,7 @@ export function FilterTabs<T extends string>({
     icons,
 }: FilterTabsProps<T>) {
     return (
-        <Tabs className='' value={value} onValueChange={(val) => onChange(val as T)}>
+        <Tabs className='overflow-x-auto scrollbar-none' value={value} onValueChange={(val) => onChange(val as T)}>
             <TabsList variant="line">
                 {options.map((option) => (
                     <TabsTrigger className=" rounded-md px-3 py-1 bg-primary" key={option} value={option}>
@@ -33,6 +33,6 @@ export function FilterTabs<T extends string>({
             </TabsList>
         </Tabs>
 
-        
+
     );
 }
