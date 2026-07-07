@@ -18,7 +18,7 @@ export default function ProfilePage() {
     const [isFollowing, setIsFollowing] = useState(false);
 
     return (
-        <ContentLayout title="Profile">
+        <ContentLayout className="p-0 md:p-0" title="Profile">
             {/* Cover Image with Gradient Animation */}
             <div
                 className="relative h-48 md:h-64 w-full overflow-hidden rounded-b-2xl"
