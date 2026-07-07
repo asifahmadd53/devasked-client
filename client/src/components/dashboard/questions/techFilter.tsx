@@ -20,9 +20,9 @@ export function TechFilter<T extends string>({
 }: FilterTabsProps<T>) {
     return (
         <Tabs value={value} className="w-full overflow-x-auto scrollbar-none" onValueChange={(val) => onChange(val as T)}> 
-            <TabsList className="gap-2">
+            <TabsList className="gap-2 bg-subtle">
                 {options.map((option) => (
-                    <TabsTrigger className="rounded-sm px-3 py-1 shadow-none data-[state=active]:bg-secondary/60 cursor-pointer bg-white gap-2 border-primary/10 border "
+                    <TabsTrigger className="rounded-sm px-3 py-1 shadow-none data-[state=active]:bg-secondary/60 cursor-pointer bg-white gap-2 border-primary/10 "
  key={option} value={option}>
                         {icons?.[option]}
                         {option}
