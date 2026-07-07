@@ -1,5 +1,6 @@
 "use client";
 
+import { ContentLayout } from "@/components/layout/DashboardContent";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -17,7 +18,7 @@ export default function ProfilePage() {
     const [isFollowing, setIsFollowing] = useState(false);
 
     return (
-        <div className="">
+        <ContentLayout title="Profile">
             {/* Cover Image with Gradient Animation */}
             <div
                 className="relative h-48 md:h-64 w-full overflow-hidden rounded-b-2xl"
@@ -181,6 +182,6 @@ export default function ProfilePage() {
                     </div>
                 </section>
             </div>
-        </div>
+        </ContentLayout>
     );
 }
