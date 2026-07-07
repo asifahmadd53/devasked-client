@@ -25,23 +25,24 @@ export function ProgressChart({ data }: ProgressChartProps) {
         labels: data.map((item) => item.topic),
         colors: data.map((item) => item.color),
         legend: {
-            position: 'bottom',
-            fontSize: '14px',
-            formatter: (seriesName, opts) => {
-                return `${seriesName} ${opts.w.globals.series[opts.seriesIndex]}%`;
-            },
+            show: false,
         },
         dataLabels: {
-            enabled: false,
+            enabled: true,
         },
         stroke: {
-            width: 2,
+            width: 1,
             colors: ['#fff'],
         },
         plotOptions: {
             pie: {
                 donut: {
-                    size: '75%',
+                    size: '70%',
+                },
+                dataLabels: {
+                    external: {
+                        show: true,
+                    },
                 },
             },
         },
@@ -50,16 +51,6 @@ export function ProgressChart({ data }: ProgressChartProps) {
                 formatter: (value) => `${value}%`,
             },
         },
-        responsive: [
-            {
-                breakpoint: 640,
-                options: {
-                    legend: {
-                        position: 'bottom',
-                    },
-                },
-            },
-        ],
     };
 
     return (
@@ -68,12 +59,15 @@ export function ProgressChart({ data }: ProgressChartProps) {
                 Progress based on Quiz Score
             </h3>
 
-            <Chart
-                options={options}
-                series={series}
-                type="donut"
-                height={300}
-            />
+            <div className="flex justify-center items-center h-75 overflow-hidden">
+                <Chart
+                    options={options}
+                    series={series}
+                    type="donut"
+                    width={500}
+                    height={500}
+                />
+            </div>
         </div>
     );
 }
