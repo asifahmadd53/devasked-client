@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { Community } from '@/types/dashboard';
+import Image from 'next/image';
 
 interface PopularNowSidebarProps {
     communities: Community[];
@@ -24,7 +25,7 @@ export function PopularNowSidebar({ communities }: PopularNowSidebarProps) {
                         href={`/communities/${community.id}`}
                         className="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 transition group"
                     >
-                        <span className="text-2xl">{community.icon}</span>
+                        <Image width={25} height={25} alt='community.icon' src={community.icon}/>
                         <div className="min-w-0">
                             <p className="text-sm font-semibold text-slate-900 group-hover:text-blue-600">
                                 {community.name}

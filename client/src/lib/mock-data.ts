@@ -1,4 +1,5 @@
-import { User, Question, Community, Activity, QuizProgress } from "./types";
+import { flutter, python, react, server } from "@/assets/icons";
+import { User, Question, Community, Activity, QuizProgress } from "@/types/dashboard";
 
 // Mock users
 export const mockUsers: Record<string, User> = {
@@ -38,7 +39,7 @@ export const mockQuestions: Question[] = [
     askedBy: mockUsers.sara_dev,
     companyType: "Startup",
     difficulty: "Hard",
-    techStack: ["React", "Hooks"],
+    techStack: ["React"],
     tags: ["STARTUP", "Hard", "React", "Hooks"],
     views: 183,
     saves: 18,
@@ -54,7 +55,7 @@ export const mockQuestions: Question[] = [
     askedBy: mockUsers.sara_dev,
     companyType: "Big Tech/FAANG",
     difficulty: "Hard",
-    techStack: ["React", "Hooks"],
+    techStack: ["React"],
     tags: ["STARTUP", "Hard", "React", "Hooks"],
     views: 183,
     saves: 18,
@@ -70,7 +71,7 @@ export const mockQuestions: Question[] = [
     askedBy: mockUsers.sara_dev,
     companyType: "Big Tech/FAANG",
     difficulty: "Hard",
-    techStack: ["React", "Frontend"],
+    techStack: ["React"],
     tags: ["BIG TECH", "Hard", "Frontend", "React"],
     views: 183,
     saves: 18,
@@ -86,7 +87,7 @@ export const mockQuestions: Question[] = [
     askedBy: mockUsers.john_smith,
     companyType: "Mid-Level",
     difficulty: "Hard",
-    techStack: ["Node.js", "Backend"],
+    techStack: ["Node.js"],
     tags: ["MID-LEVEL", "Hard", "Backend", "Node.js"],
     views: 3100,
     saves: 18,
@@ -102,7 +103,7 @@ export const mockQuestions: Question[] = [
     askedBy: mockUsers.alex_tech,
     companyType: "Startup",
     difficulty: "Medium",
-    techStack: ["React", "Redux"],
+    techStack: ["React"],
     tags: ["STARTUP", "Medium", "React", "Redux"],
     views: 256,
     saves: 12,
@@ -150,7 +151,7 @@ export const mockQuestions: Question[] = [
     askedBy: mockUsers.alex_tech,
     companyType: "Big Tech/FAANG",
     difficulty: "Hard",
-    techStack: ["AWS", "Backend"],
+    techStack: ["AWS"],
     tags: ["BIG TECH", "Hard", "AWS", "Backend"],
     views: 567,
     saves: 32,
@@ -165,7 +166,7 @@ export const mockQuestions: Question[] = [
     askedBy: mockUsers.sara_dev,
     companyType: "Startup",
     difficulty: "Easy",
-    techStack: ["React", "Testing"],
+    techStack: ["React"],
     tags: ["STARTUP", "Easy", "React", "Testing"],
     views: 145,
     saves: 8,
@@ -180,7 +181,7 @@ export const mockQuestions: Question[] = [
     askedBy: mockUsers.mia_code,
     companyType: "Big Tech/FAANG",
     difficulty: "Hard",
-    techStack: ["AWS", "Backend"],
+    techStack: ["AWS"],
     tags: ["BIG TECH", "Hard", "AWS", "Backend"],
     views: 789,
     saves: 45,
@@ -202,7 +203,7 @@ export const mockCommunities: Community[] = [
     memberCount: 2400,
     messageCount: 15900,
     questionCount: 2100,
-    icon: "⚛️",
+    icon: react,
     joined: false,
   },
   {
@@ -215,7 +216,7 @@ export const mockCommunities: Community[] = [
     memberCount: 2400,
     messageCount: 15900,
     questionCount: 2100,
-    icon: "🦋",
+    icon: flutter,
     joined: false,
   },
   {
@@ -228,7 +229,7 @@ export const mockCommunities: Community[] = [
     memberCount: 1800,
     messageCount: 12300,
     questionCount: 1500,
-    icon: "🏗️",
+    icon: server,
     joined: false,
   },
   {
@@ -240,7 +241,7 @@ export const mockCommunities: Community[] = [
     memberCount: 2400,
     messageCount: 15900,
     questionCount: 2100,
-    icon: "🐍",
+    icon: python,
     joined: false,
   },
 ];

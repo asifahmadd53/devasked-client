@@ -9,6 +9,8 @@ import { PopularNowSidebar } from '@/components/dashboard/communities/popularNow
 import { TechFilter } from '@/components/dashboard/questions/techFilter';
 import { TechStackType } from '@/types/dashboard';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { ContentLayout } from '@/components/layout/DashboardContent';
+import { ChevronDown } from 'lucide-react';
 
 
 const ITEMS_PER_PAGE = 4;
@@ -64,8 +66,9 @@ export default function CommunitiesPage() {
     }
 
     return (
-        <main className="bg-slate-50 min-h-screen">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <ContentLayout title="My Communities">
+       
+            <div className="max-w-7xl mx-auto">
                 {/* Breadcrumb */}
                 {/* <Breadcrumb
                     items={[
@@ -76,7 +79,7 @@ export default function CommunitiesPage() {
                 /> */}
 
                 {/* Header */}
-                <div className="mb-8">
+                <div className="mb-4">
                     <h1 className="text-3xl font-bold text-slate-900">Explore Communities</h1>
                     <p className="text-slate-600 mt-1">
                         Join as many tech communities as you want to boost your preparation
@@ -99,30 +102,18 @@ export default function CommunitiesPage() {
                                                value={selectedTechStack}
                                                onChange={onTechStackChange}
                                            />
-                                           {/* <button className="px-3 py-1 rounded text-sm font-medium bg-transparent text-slate-600 border border-slate-300 hover:bg-slate-50 transition whitespace-nowrap flex items-center gap-1">
+                                           <button className="px-3 py-1 rounded text-sm font-medium bg-transparent text-slate-600 border border-slate-300 hover:bg-slate-50 transition whitespace-nowrap flex items-center gap-1">
                                                <ChevronDown className="w-4 h-4" />
-                                           </button> */}
+                                           </button>
                        
-                                           <div className="flex items-center lg:gap-4 justify-between">
+                                           {/* <div className="flex items-center lg:gap-4 justify-between">
                                                <div className="flex items-center gap-2">
                                                    <span className="text-sm font-semibold text-primary/80 tracking-wider whitespace-nowrap">Sort By:</span>
                                                </div>
                        
                        
                                                <div>
-                                                   {/* <Select value={selectedSort} onValueChange={(value) => value && onSortChange(value)} aria-label="Select framework">
-                                                       <SelectTrigger>
-                                                           <SelectValue  placeholder="Select framework" />
-                                                       </SelectTrigger>
-                                                       <SelectPopup className='rounded-xs' alignItemWithTrigger={false}>
-                                                           {sortOptions.map((option) => (
-                                                               <SelectItem key={option} value={option}>
-                                                                   {option}
-                                                               </SelectItem>
-                                                           ))}
-                                                       </SelectPopup>
-                                                   </Select> */}
-                       
+                                                
                                                    <Select value={selectedSort} onValueChange={(value) => value && onSortChange(value)} aria-label="Select framework">
                                                        <SelectTrigger className="w-45">
                                                            <SelectValue placeholder="Select framework" />
@@ -140,7 +131,7 @@ export default function CommunitiesPage() {
                                                </div>
                        
                        
-                                           </div>
+                                           </div> */}
                        
                                        </div>
                        
@@ -155,6 +146,7 @@ export default function CommunitiesPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                             {paginatedCommunities.map((community) => (
                                 <CommunityCard
+                                    icon={community.icon}
                                     key={community.id}
                                     community={community}
                                     onJoin={handleJoin}
@@ -173,11 +165,11 @@ export default function CommunitiesPage() {
                     </div>
 
                     {/* Sidebar */}
-                    <div className="lg:col-span-1">
+                    {/* <div className="lg:col-span-1">
                         <PopularNowSidebar communities={mockCommunities.slice(0, 3)} />
-                    </div>
+                    </div> */}
                 </div>
             </div>
-        </main>
+        </ContentLayout>
     );
 }
