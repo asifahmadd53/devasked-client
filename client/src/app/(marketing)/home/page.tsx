@@ -165,11 +165,12 @@ export default function HomePage() {
                     </div>
                 </section>
 
-                <section>
+                <section id="community">
                     <CommunitySection />
+                </section>
+                <section id="features">
                     <FeaturesSection />
                 </section>
-
 
                 <FAQSection />
 

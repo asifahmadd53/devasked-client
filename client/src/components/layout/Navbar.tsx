@@ -8,8 +8,8 @@ import { useEffect, useState } from "react"
 import { Button } from "../ui/button"
 
 const menuItems = [
-    { name: 'Features', href: '#link' },
-    { name: 'Community', href: '#link' },
+    { name: 'Features', href: '/#features' },
+    { name: 'Community', href: '/#community' },
     { name: 'Contact', href: '/contact' },
 ]
 
