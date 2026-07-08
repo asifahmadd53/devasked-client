@@ -3,6 +3,7 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
+import { ChevronDown } from "lucide-react";
 import { ReactNode } from "react";
 
 interface FilterTabsProps<T extends string> {
@@ -28,8 +29,10 @@ export function TechFilter<T extends string>({
                         {option}
                     </TabsTrigger>
                 ))}
+            <button className="px-3 py-1 rounded text-sm font-medium bg-transparent text-slate-600 border border-slate-300 hover:bg-slate-50 transition whitespace-nowrap flex items-center gap-1">
+                <ChevronDown className="w-4 h-4" />
+            </button>
             </TabsList>
-            
         </Tabs>
     )
 }

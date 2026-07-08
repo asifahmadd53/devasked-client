@@ -1,4 +1,5 @@
-import { User, Question, Community, Activity, QuizProgress } from "../types/dashboard";
+import { flutter, python, react, server } from "@/assets/icons";
+import { User, Question, Community, Activity, QuizProgress } from "@/types/dashboard";
 
 // Mock users
 export const mockUsers: Record<string, User> = {
@@ -202,7 +203,7 @@ export const mockCommunities: Community[] = [
     memberCount: 2400,
     messageCount: 15900,
     questionCount: 2100,
-    icon: "⚛️",
+    icon: react,
     joined: false,
   },
   {
@@ -215,7 +216,7 @@ export const mockCommunities: Community[] = [
     memberCount: 2400,
     messageCount: 15900,
     questionCount: 2100,
-    icon: "🦋",
+    icon: flutter,
     joined: false,
   },
   {
@@ -228,7 +229,7 @@ export const mockCommunities: Community[] = [
     memberCount: 1800,
     messageCount: 12300,
     questionCount: 1500,
-    icon: "🏗️",
+    icon: server,
     joined: false,
   },
   {
@@ -240,7 +241,7 @@ export const mockCommunities: Community[] = [
     memberCount: 2400,
     messageCount: 15900,
     questionCount: 2100,
-    icon: "🐍",
+    icon: python,
     joined: false,
   },
 ];

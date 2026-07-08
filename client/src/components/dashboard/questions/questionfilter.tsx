@@ -2,7 +2,7 @@
 
 import { ChevronDown } from 'lucide-react';
 import { CompanyType, DifficultyLevel, TechStackType } from '@/types/dashboard';
-import { FilterTabs } from './filterButton';
+import { FilterTabs } from './filterTabs';
 import { TechFilter } from './techFilter';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '../../ui/select';
 

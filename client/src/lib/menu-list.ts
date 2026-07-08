@@ -49,12 +49,12 @@ export function getMenuList(pathname: string): Group[] {
           icon: SquarePen,
           submenus: [
             {
-              href: "/communities",
-              label: "All Posts",
+              href: "/communities/my-communities",
+              label: "My Communities",
             },
             {
-              href: "/my-communities",
-              label: "New Post",
+              href: "/communities/all-communities",
+              label: "All Communities",
             },
           ],
         },
