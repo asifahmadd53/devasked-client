@@ -65,7 +65,7 @@ export function CollapseMenuButton({
         asChild
       >
         <Button
-          variant={isSubmenuActive ? "secondary" : "ghost"}
+          variant={isSubmenuActive ? "ghost" : "ghost"}
           className="w-full justify-start h-10"
         >
           <div className="w-full items-center flex justify-between">
@@ -106,7 +106,7 @@ export function CollapseMenuButton({
             key={index}
             variant={
               (active === undefined && pathname === href) || active
-                ? "secondary"
+                ? "default"
                 : "ghost"
             }
             className="w-full justify-start h-10 mb-1"
@@ -170,7 +170,7 @@ export function CollapseMenuButton({
             <Link
               className={`cursor-pointer ${
                 ((active === undefined && pathname === href) || active) &&
-                "bg-secondary"
+                "bg-primary"
               }`}
               href={href}
             >

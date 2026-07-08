@@ -92,17 +92,17 @@ export function Menu({ isOpen }: MenuProps) {
                                         </div>
                                     ) : (
                                         <div className="w-full" key={index}>
-                                            <CollapseMenuButton
-                                                icon={Icon}
-                                                label={label}
-                                                active={
-                                                    active === undefined
-                                                        ? pathname.startsWith(href)
-                                                        : active
-                                                }
-                                                submenus={submenus}
-                                                isOpen={isOpen}
-                                            />
+                                                <CollapseMenuButton
+                                                    icon={Icon}
+                                                    label={label}
+                                                    active={
+                                                        active === undefined
+                                                            ? pathname.startsWith(href)
+                                                            : active
+                                                    }
+                                                    submenus={submenus}
+                                                    isOpen={isOpen}
+                                                />
                                         </div>
                                     )
                             )}
