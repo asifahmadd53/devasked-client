@@ -9,7 +9,13 @@ export interface User {
 // Question types
 export type CompanyType = "All" | "Startup" | "Mid-Level" | "Big Tech/FAANG";
 export type DifficultyLevel = "All" | "Easy" | "Medium" | "Hard";
-export type TechStackType = "All" | "React" | "Node.js" | "AWS" | "Python";
+export type TechStackType =
+  | "All"
+  | "React"
+  | "Node.js"
+  | "AWS"
+  | "Python"
+  | "System Design";
 
 export interface Question {
   id: string;

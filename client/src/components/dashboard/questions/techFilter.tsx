@@ -3,6 +3,7 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
+import { ChevronDown } from "lucide-react";
 import { ReactNode } from "react";
 
 interface FilterTabsProps<T extends string> {
@@ -19,8 +20,8 @@ export function TechFilter<T extends string>({
     icons,
 }: FilterTabsProps<T>) {
     return (
-        <Tabs value={value} className="w-full overflow-x-auto scrollbar-none" onValueChange={(val) => onChange(val as T)}> 
-            <TabsList className="gap-2">
+        <Tabs value={value} className="w-full overflow-x-auto scrollbar-none" onValueChange={(val) => onChange(val as T)}>
+            <TabsList className="gap-2 bg-subtle">
                 {options.map((option) => (
                     <TabsTrigger className="rounded-sm px-3 py-1 shadow-none data-[state=active]:bg-secondary/60 cursor-pointer bg-white gap-2 border-primary/10 border "
  key={option} value={option}>
@@ -28,8 +29,10 @@ export function TechFilter<T extends string>({
                         {option}
                     </TabsTrigger>
                 ))}
+            <button className="px-3 py-1 rounded text-sm font-medium bg-transparent text-slate-600 border border-slate-300 hover:bg-slate-50 transition whitespace-nowrap flex items-center gap-1">
+                <ChevronDown className="w-4 h-4" />
+            </button>
             </TabsList>
-            
         </Tabs>
     )
 }
