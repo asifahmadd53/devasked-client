@@ -9,6 +9,7 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from "./Menu";
+import { SignOutButton } from "./SignOutButton";
 import Image from "next/image";
 
 export function SheetMenu() {
@@ -31,8 +32,12 @@ export function SheetMenu() {
                         </Link>
                     </Button>
                 </SheetHeader>
-                <div className="overflow-y-auto"> <Menu isOpen /> </div>
-                
+
+                <div className="flex-1">
+                    <Menu isOpen />
+                </div>
+
+                <SignOutButton isOpen />
             </SheetContent>
         </Sheet>
     );
