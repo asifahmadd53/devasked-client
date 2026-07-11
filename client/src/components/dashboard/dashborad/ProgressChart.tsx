@@ -52,6 +52,37 @@ export function ProgressChart({ data }: ProgressChartProps) {
                 formatter: (value) => `${value}%`,
             },
         },
+        responsive: [
+            {
+                breakpoint: 768,
+                options: {
+                    chart: {
+                        type: 'donut',
+                    },
+                    legend: {
+                        show: true,
+                        position: 'bottom',
+                        horizontalAlign: 'center',
+                    },
+                    dataLabels: {
+                        enabled: true,
+                        style: {
+                            fontSize: '10px',
+                            fontWeight: 500,
+                        },
+                    },
+                    plotOptions: {
+                        pie: {
+                            dataLabels: {
+                                external: {
+                                    show: false,
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+        ],
     };
 
     return (
@@ -60,13 +91,25 @@ export function ProgressChart({ data }: ProgressChartProps) {
                 Progress based on Quiz Score
             </h3>
 
-            <div className="flex justify-center items-center h-75 overflow-hidden">
+            {/* Large screens: chart with external data labels, no legend */}
+            <div className="hidden md:flex justify-center items-center h-75 overflow-hidden">
                 <Chart
                     options={options}
                     series={series}
                     type="donut"
                     width={500}
                     height={500}
+                />
+            </div>
+
+            {/* Small screens: chart with bottom legend only */}
+            <div className="flex md:hidden justify-center items-center overflow-hidden">
+                <Chart
+                    options={options}
+                    series={series}
+                    type="donut"
+                    width={300}
+                    height={300}
                 />
             </div>
         </div>
