@@ -7,6 +7,7 @@ import { useStore } from "@/hooks/use-store";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { SignOutButton } from "../SignOutButton";
 
 export function Sidebar() {
     const sidebar = useStore(useSidebar, (x) => x);
@@ -59,7 +60,12 @@ export function Sidebar() {
                             />
                         </Link>
                 </Button>
-                <Menu isOpen={getOpenState()} />
+                <div className="flex-1 overflow-y-auto">
+                    <Menu isOpen={getOpenState()} />
+                </div>
+
+                <SignOutButton isOpen={getOpenState()} />
+
             </div>
         </aside>
     );
