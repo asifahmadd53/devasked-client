@@ -31,7 +31,8 @@ export function SheetMenu() {
                         </Link>
                     </Button>
                 </SheetHeader>
-                <Menu isOpen />
+                <div className="overflow-y-auto"> <Menu isOpen /> </div>
+                
             </SheetContent>
         </Sheet>
     );
