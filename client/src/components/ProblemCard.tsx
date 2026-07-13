@@ -21,7 +21,7 @@ export function ProblemCard({
 }) {
     return (
 
-        <div className="relative bg-white w-full p-4 md:p-6 rounded-[2rem] md:rounded-3xl flex flex-col transition-all duration-500 group">
+        <div className="relative bg-white w-full p-4 md:p-6 rounded-2xl md:rounded-2xl flex flex-col transition-all duration-500 group">
             <div
                 style={{ transform: "translateZ(50px)" }}
                 className="flex flex-col h-full px-2"

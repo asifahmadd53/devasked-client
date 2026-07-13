@@ -47,7 +47,7 @@ export function FeatureCard({
     return (
         <div
             className={cn(
-                "group relative overflow-hidden rounded-2xl border bg-background px-8 pt-8 pb-6",
+                "group relative  overflow-hidden rounded-2xl bg-background px-8 pt-8 pb-6",
                 className
             )}
         >

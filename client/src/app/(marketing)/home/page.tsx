@@ -92,7 +92,7 @@ export default function HomePage() {
                                 aria-hidden
                                 className="bg-gradient-to-b to-subtle absolute inset-0 z-10 from-transparent from-35%"
                             />
-                            <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                            <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl  p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                 <Image
                                     className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
                                     src="https://tailark.com//_next/image?url=%2Fmail2.png&w=3840&q=75"
@@ -138,7 +138,7 @@ export default function HomePage() {
                             </p>
                         </div>
 
-                        <div className="w-full border">
+                        <div className="w-full">
                             <div className="grid grid-cols-1 w-full gap-6 sm:grid-cols-2 md:grid-cols-3">
                                 {problems.map((feature) => (
                                     <ProblemCard problem={feature} key={feature.title} />
