@@ -171,8 +171,10 @@ export default function HomePage() {
                 <section id="features">
                     <FeaturesSection />
                 </section>
+                <section className='mb-10'>
 
                 <FAQSection />
+                </section>
 
             </main>
 
